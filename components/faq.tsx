@@ -9,43 +9,73 @@ export default function FAQ() {
     badge: "FAQ",
     title: "Frequently Asked Questions",
     description: "Answers to common questions about our ecommerce agency and the wide range of services we offer.",
-    items: [
-      {
-        question: "What services does your ecommerce agency provide?",
-        answer:
-          "We offer end-to-end ecommerce solutions including store setup, custom development, UI/UX design, digital marketing, SEO, integrations, maintenance, and ongoing support. We tailor our services to fit your business needs.",
-      },
-      {
-        question: "Which ecommerce platforms do you work with?",
-        answer:
-          "We work with all major ecommerce platforms such as Shopify, WooCommerce, Magento, BigCommerce, and custom solutions. Our team can recommend the best platform for your business goals.",
-      },
-      {
-        question: "Do you collaborate with other agencies or partners?",
-        answer:
-          "Yes, we have a strong network of partners and collaborate with specialists in design, logistics, payment solutions, and more to deliver comprehensive ecommerce projects.",
-      },
-      {
-        question: "Can you help migrate my existing store to a new platform?",
-        answer:
-          "Absolutely. We handle migrations from any platform, ensuring your data, products, and customer information are transferred securely and efficiently with minimal downtime.",
-      },
-      {
-        question: "How do you ensure the success of my ecommerce project?",
-        answer:
-          "We follow a proven process: discovery, strategy, design, development, testing, and launch. We also provide ongoing optimization and support to help your business grow.",
-      },
-      {
-        question: "What is your pricing model?",
-        answer:
-          "Our pricing is flexible and depends on the scope and complexity of your project. We offer both fixed-price packages and custom quotes. Contact us for a free consultation and estimate.",
-      },
-      {
-        question: "How can I get started?",
-        answer:
-          "Simply reach out to us via our contact form, email, or phone. We'll schedule a call to discuss your needs and propose the best solutions for your ecommerce business.",
-      },
-    ],
+items: [
+  {
+    question: "What exactly are agency ad accounts and why do dropshippers need them?",
+    answer:
+      "Our agency ad accounts are verified Meta Business Manager ad accounts owned and managed through our agency. They provide higher spending limits, reduced risk of bans, faster support, and better stability for dropshipping businesses that rely heavily on ads.",
+  },
+  {
+    question: "Is it safe to run my store ads on your Meta ad accounts?",
+    answer:
+      "Yes. Our ad accounts are fully compliant, monitored daily, and managed by Meta advertising experts. We also help prevent policy issues to keep accounts stable and active.",
+  },
+  {
+    question: "Do I get full access to the Meta ad account?",
+    answer:
+      "You receive partner access through our agency Business Manager so you can run ads, track performance, and scale while we maintain ownership and security of the account.",
+  },
+  {
+    question: "What happens if a Meta ad account gets restricted?",
+    answer:
+      "We handle the appeal process, communicate with Meta support, and move you to a backup account if needed, so your ads experience minimal downtime.",
+  },
+  {
+    question: "Can you also provide backup or multiple ad accounts?",
+    answer:
+      "Yes. We can provide additional or backup Meta ad accounts depending on your scaling needs and risk profile.",
+  },
+  {
+    question: "What email marketing services do you offer for dropshipping stores?",
+    answer:
+      "We provide full email marketing management including campaign setup, Klaviyo/Omnisend flows, newsletter creation, segmentation, A/B testing, SMS integration, and revenue optimization.",
+  },
+  {
+    question: "How fast can you set up email automations like abandoned cart and post-purchase flows?",
+    answer:
+      "Most email flows can be implemented within 24–72 hours, depending on complexity. Our team ensures they are optimized to generate maximum revenue.",
+  },
+  {
+    question: "Can your developers build or customize anything in my store?",
+    answer:
+      "Yes. We have in-house coders and ecommerce experts who can build custom apps, landing pages, theme customizations, automations, tracking integrations (like Meta Pixel, TikTok, GA4), and API connections.",
+  },
+  {
+    question: "Do you help with tracking, pixels, and conversion optimization?",
+    answer:
+      "Absolutely. We implement and optimize Meta Pixel, Conversion API, event tracking, analytics dashboards, and other tools to ensure accurate data and improved ad performance.",
+  },
+  {
+    question: "Do you offer support outside of ads and email marketing?",
+    answer:
+      "Yes. Our team supports dropshippers in all areas including scaling strategy, technical development, creative guidance, CRM, deliverability, automation, and troubleshooting.",
+  },
+  {
+    question: "How does pricing work for your services?",
+    answer:
+      "We offer fixed packages for ad accounts and email marketing, as well as custom pricing for development work and scaling support. Pricing depends on your business size and needs.",
+  },
+  {
+    question: "How quickly can I start running ads after getting an agency ad account?",
+    answer:
+      "You can usually launch campaigns within 24 hours after onboarding and approval. Our team assists you with setup to ensure a smooth start.",
+  },
+  {
+    question: "Do you work with complete beginners in dropshipping?",
+    answer:
+      "Yes. We guide both beginners and advanced dropshippers. Whether you're launching your first store or scaling to 6–7 figures, we provide hands-on expert support.",
+  },
+]
   }
 
   const [openItem, setOpenItem] = useState<string | null>(null)

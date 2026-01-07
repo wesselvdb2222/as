@@ -8,7 +8,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "AllSourced - Your eCommerce Solutions",
+  title: "AllSourced -  Dropshipping Solutions",
   description:
     "AllSourced provides all the solutions you need to succeed with your e-commerce business.",
     icons: {
