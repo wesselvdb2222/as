@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect } from "react"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from "lucide-react"
 import HostingOptions from "@/components/hosting-options"
@@ -10,6 +9,7 @@ import Testimonials from "@/components/testimonials"
 import FAQ from "@/components/faq"
 import { SpaceBackground } from "@/components/space-background"
 import Link from "next/link"
+import DiscordWidget from "@/components/discord-widget"
 
 export default function Home() {
   // Hardcoded hero data
@@ -20,17 +20,11 @@ export default function Home() {
     },
     title: {
       prefix: "Solutions For ",
-      highlight: "Your eCommerce",
+      highlight: "Your Dropshipping",
       suffix: " Store",
     },
     description:
       "AllSourced provides all the solutions you need to succeed with your e-commerce business.",
-    image: {
-      src: "/images/space-cat.png",
-      alt: "Futuristic Server",
-      width: 600,
-      height: 400,
-    },
     buttons: [
       {
         text: "Our Services",
@@ -103,6 +97,7 @@ export default function Home() {
                 )}
                 <span>{hero.badge.text}</span>
               </div>
+
               <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
                 {hero.title.prefix}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-primary-300 to-primary-500 animate-gradient">
@@ -110,7 +105,9 @@ export default function Home() {
                 </span>
                 {hero.title.suffix}
               </h1>
+
               <p className="max-w-[600px] text-gray-400 md:text-xl">{hero.description}</p>
+
               <div className="flex flex-wrap gap-4 md:justify-start justify-center">
                 {hero.buttons.map((button, index) =>
                   button.href === "#hosting-options" ? (
@@ -167,18 +164,14 @@ export default function Home() {
                 )}
               </div>
             </div>
+
+            {/* REPLACED IMAGE WITH DISCORD WIDGET */}
             <div className="relative flex justify-center hero-element opacity-100 transform-none">
               <div className="relative w-full max-w-md">
                 <div className="absolute inset-0 bg-primary-500/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="relative z-10 transition-transform duration-700 hover:scale-105 hover:rotate-3">
-                  <Image
-                    src={hero.image.src || "/placeholder.svg"}
-                    alt={hero.image.alt}
-                    width={hero.image.width}
-                    height={hero.image.height}
-                    className="relative z-10 drop-shadow-[0_0_15px_rgba(138,79,255,0.5)]"
-                    priority
-                  />
+
+                <div className="relative z-10 flex justify-center transition-transform duration-700 hover:scale-[1.02]">
+                  <DiscordWidget />
                 </div>
               </div>
             </div>
@@ -197,24 +190,22 @@ export default function Home() {
 
       {/* FAQ */}
       <FAQ />
-      {/* WhatsApp Button */}
+
+      {/* Discord Button */}
       <div className="fixed bottom-4 right-4">
         <a
-          href="https://wa.me/31402291292" // Replace with your WhatsApp number
+          href="https://discord.gg/allsourced"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all duration-300"
-          aria-label="Chat on WhatsApp"
+          className="flex items-center justify-center w-14 h-14 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300"
+          aria-label="Join our Discord"
         >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="w-7 h-7"
-            >
-              <path d="M6.014 8.00613C6.12827 7.1024 7.30277 5.87414 8.23488 6.01043L8.23339 6.00894C9.14051 6.18132 9.85859 7.74261 10.2635 8.44465C10.5504 8.95402 10.3641 9.4701 10.0965 9.68787C9.7355 9.97883 9.17099 10.3803 9.28943 10.7834C9.5 11.5 12 14 13.2296 14.7107C13.695 14.9797 14.0325 14.2702 14.3207 13.9067C14.5301 13.6271 15.0466 13.46 15.5548 13.736C16.3138 14.178 17.0288 14.6917 17.69 15.27C18.0202 15.546 18.0977 15.9539 17.8689 16.385C17.4659 17.1443 16.3003 18.1456 15.4542 17.9421C13.9764 17.5868 8 15.27 6.08033 8.55801C5.97237 8.24048 5.99955 8.12044 6.014 8.00613Z" fill="#ffffff"></path>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C10.7764 23 10.0994 22.8687 9 22.5L6.89443 23.5528C5.56462 24.2177 4 23.2507 4 21.7639V19.5C1.84655 17.492 1 15.1767 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM6 18.6303L5.36395 18.0372C3.69087 16.4772 3 14.7331 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C11.0143 21 10.552 20.911 9.63595 20.6038L8.84847 20.3397L6 21.7639V18.6303Z" fill="#ffffff"></path>
-            </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className="w-7 h-7">
+            <path
+              d="M20.317 4.369a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.078.037c-.211.375-.444.864-.608 1.249-1.844-.276-3.68-.276-5.486 0-.164-.393-.405-.874-.617-1.249a.077.077 0 00-.078-.037c-1.693.36-3.338.915-4.885 1.515a.07.07 0 00-.032.027C.533 9.045-.319 13.579.099 18.057a.082.082 0 00.031.056 19.908 19.908 0 005.993 3.04.077.077 0 00.084-.027c.462-.63.874-1.295 1.226-1.987a.076.076 0 00-.041-.105 13.098 13.098 0 01-1.872-.915.077.077 0 01-.008-.127c.126-.095.252-.192.373-.291a.075.075 0 01.077-.01c3.927 1.793 8.18 1.793 12.061 0a.075.075 0 01.078.009c.121.099.247.196.373.291a.077.077 0 01-.007.127c-.597.364-1.223.678-1.872.915a.076.076 0 00-.041.105c.375.692.787 1.357 1.226 1.987a.077.077 0 00.084.027 19.932 19.932 0 005.993-3.04.077.077 0 00.031-.056c.5-5.177-.838-9.673-3.549-13.661a.061.061 0 00-.031-.028zM8.02 15.331c-1.182 0-2.155-1.085-2.155-2.419 0-1.333.955-2.428 2.155-2.428 1.21 0 2.183 1.095 2.164 2.428 0 1.334-.955 2.419-2.164 2.419zm7.974 0c-1.182 0-2.155-1.085-2.155-2.419 0-1.333.955-2.428 2.155-2.428 1.21 0 2.183 1.095 2.164 2.428 0 1.334-.955 2.419-2.164 2.419z"
+              fill="#ffffff"
+            ></path>
+          </svg>
         </a>
       </div>
     </div>

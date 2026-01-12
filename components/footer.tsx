@@ -15,7 +15,7 @@ export default function Footer() {
     alt: "AllSourced Logo",
   }
 
-  const description = "Providing reliable and efficient solutions for your eCommerce needs."
+  const description = "Keizersgracht 520 H, 1017EK Amsterdam, The Netherlands"
 
   const socialLinks = [
     {

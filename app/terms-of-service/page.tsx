@@ -15,10 +15,10 @@ export default function TermsOfServicePage() {
 
           <div className="p-8 border rounded-lg border-primary-500/20 bg-[#010901]/70 backdrop-blur-md space-y-6 text-gray-300">
             <section>
-              <p><strong>Business name:</strong> Ceex</p>
+              <p><strong>Business name:</strong> AllSourced</p>
               <p><strong>Date published:</strong> 21-4-2025</p>
-              <p><strong>KVK Number:</strong> 90530241</p>
-              <p><strong>Business Address:</strong> De Nieuwe Erven 3 Unit 12630, 5431NV Cuijk, The Netherlands</p>
+              <p><strong>KVK Number:</strong> 97995177</p>
+              <p><strong>Business Address:</strong> Keizersgracht 520 H, 1017EK Amsterdam, The Netherlands</p>
               <p><strong>Governing Law:</strong> Dutch Law</p>
             </section>
 

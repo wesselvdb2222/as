@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">1. Introduction</h2>
               <p>
-                At AllSourced (operated by Ceex), we value your privacy and are committed to handling personal data responsibly and transparently. 
+                At AllSourced (operated by AxisDigital), we value your privacy and are committed to handling personal data responsibly and transparently. 
                 This privacy policy outlines how we collect, use, and protect business-related data in accordance with Dutch law.
               </p>
             </section>
