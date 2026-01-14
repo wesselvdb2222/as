@@ -74,11 +74,6 @@ export default function Header() {
       icon: <Code className="w-4 h-4 mr-2" />,
     },
     {
-      text: "Experts",
-      href: "/experts",
-      icon: <UserRoundSearch className="w-4 h-4 mr-2" />,
-    },
-    {
       text: "Help",
       type: "dropdown",
       icon: <HelpCircle className="w-4 h-4 mr-2" />,
@@ -87,6 +82,11 @@ export default function Header() {
           text: "Docs",
           href: "https://docs.allsourced.agency",
           icon: <FileText className="w-4 h-4 mr-2" />,
+        },
+        {
+          text: "Support",
+          href: "https://api.whatsapp.com/send/?phone=31647415437&text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.&type=phone_number&app_absent=0",
+          icon: <UserRoundSearch className="w-4 h-4 mr-2" />,
         },
       ],
     },
@@ -193,13 +193,13 @@ export default function Header() {
             }
             return (
               <Link
-                key={index}
-                href={item.href || "#"}
-                className="text-gray-300 hover:text-primary-400 transition-colors relative group flex items-center"
+              key={index}
+              href={item.href || "#"}
+              className="text-white hover:text-white transition-colors relative group flex items-center"
               >
-                {item.icon}
-                {item.text}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-400 group-hover:w-full transition-all duration-300"></span>
+              {item.icon}
+              {item.text}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-400 group-hover:w-full transition-all duration-300"></span>
               </Link>
             )
           })}

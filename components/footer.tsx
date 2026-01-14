@@ -99,11 +99,11 @@ export default function Footer() {
   return (
     <footer className="bg-black/80 backdrop-blur-md border-t border-primary-500/20 relative">
       <button
-        onClick={scrollToTop}
-        className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-primary-400 flex items-center justify-center text-black hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(16,185,129,0.5)]"
-        aria-label="Scroll to top"
+      onClick={scrollToTop}
+      className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-primary-400 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(128,90,213,0.5)]"
+      aria-label="Scroll to top"
       >
-        <ArrowUp className="w-5 h-5" />
+      <ArrowUp className="w-5 h-5" />
       </button>
 
       <div className="container px-4 py-12 mx-auto">
@@ -156,7 +156,7 @@ export default function Footer() {
         <div className="pt-8 mt-8 border-t border-primary-500/20">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} {brand.name}. {copyright.text}
+              &copy; {new Date().getFullYear()} {brand.name} - {copyright.text}
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
               {legalLinks.map((item, index) => (

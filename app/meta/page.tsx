@@ -44,7 +44,7 @@ export default function DedicatedPage() {
         "Installation Support",
       ],
       popular: true,
-      buttonLink: "https://api.whatsapp.com/send?phone=31647415437&text=Hello%2C%0A%0AI%27m%20interested%20in%20a%20FB%20Structure!",
+      buttonLink: "https://api.whatsapp.com/send?phone=31647415437&text=Hello%2C%0A%0AI%27m%20interested%20in%20a%20Facebook%20Structure!",
       buttonCta: "Contact Us",
     },
     {
@@ -60,8 +60,8 @@ export default function DedicatedPage() {
         "Ability to request ad account reviews",
       ],
       popular: false,
-      buttonLink: "https://go.allsourced.agency/product/verified-bm?quantity=1",
-      buttonCta: "Buy Now",
+      buttonLink: "https://api.whatsapp.com/send/?phone=31647415437&text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.&type=phone_number&app_absent=0",
+      buttonCta: "Contact Us",
     },
     {
       name: "Reinstated Profile",
@@ -76,8 +76,24 @@ export default function DedicatedPage() {
         "24/7 Support for setup and troubleshooting",
       ],
       popular: false,
-      buttonLink: "https://go.allsourced.agency/product/reinstated-profile?quantity=1",
-      buttonCta: "Buy Now",
+      buttonLink: "https://api.whatsapp.com/send/?phone=31647415437&text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.&type=phone_number&app_absent=0",
+      buttonCta: "Contact Us",
+    },
+    {
+      name: "Facebook Page",
+      price: "€49.00",
+      period: "per page",
+      description: "Get acces to a aged Facebook Page for your business needs.",
+      features: [
+        "Bypasses  restrictions",
+        "Ready to use for business or advertising",
+        "Reduced risk of immediate re-suspension",
+        "Can be linked to Business Managers",
+        "24/7 Support for setup and troubleshooting",
+      ],
+      popular: false,
+      buttonLink: "https://api.whatsapp.com/send/?phone=31647415437&text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.&type=phone_number&app_absent=0",
+      buttonCta: "Contact Us",
     },
   ]
 

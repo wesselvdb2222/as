@@ -13,11 +13,11 @@ export default function HostingOptions() {
   // Hardcoded hosting options data
   const hostingOptions = {
     title: "We Provide, You Choose",
-    badge: "Our Solutions",
+    badge: "Our Solutions To Scale! 🚀",
     description: "Select the perfect eCommerce solution tailored to your specific needs and requirements.",
     options: [
       {
-        name: "Meta Services",
+        name: "for Meta",
         icon: "Facebook",
         description: "Explore our range of Meta Services that help you scale your business.",
         image: "/images/castle.png",
@@ -29,7 +29,7 @@ export default function HostingOptions() {
       {
         name: "Email Marketing",
         icon: "Mail",
-        description: "Explore our range of Email Marketing Services that help you scale your business.",
+        description: "Explore our email marketing services that help you scale your business.",
         image: "/images/processor.png",
         features: [
         ],
@@ -37,7 +37,7 @@ export default function HostingOptions() {
         buttonHref: "/email",
       },
       {
-        name: "Google Services",
+        name: "for Google",
         icon: "Database",
         description: "Explore our range of Google Services that help you scale your business.",
         image: "/images/assetcpanel.png",
@@ -117,9 +117,9 @@ export default function HostingOptions() {
             ))}
           </ul>
 
-          <Button onClick={() => {
+            <Button onClick={() => {
             window.location.href = option.buttonHref
-          }} className="w-full relative overflow-hidden group/btn bg-gradient-to-r from-primary-500 to-primary-400 hover:from-primary-400 hover:to-primary-500 text-black font-bold shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] mt-auto">
+            }} className="w-full relative overflow-hidden group/btn bg-gradient-to-r from-primary-500 to-primary-400 hover:from-primary-400 hover:to-primary-500 text-white font-bold shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] mt-auto">
             <span className="relative z-10 flex items-center">
             {option.buttonText}
             <ChevronRight
@@ -133,7 +133,7 @@ export default function HostingOptions() {
               hoveredOption === index ? "scale-x-100" : "scale-x-0"
             }`}
             ></span>
-          </Button>
+            </Button>
           </div>
         </div>
         ))}

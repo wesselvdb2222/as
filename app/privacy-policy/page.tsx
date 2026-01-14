@@ -111,8 +111,8 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl font-semibold text-white mb-4">10. Contact Information</h2>
               <p>
                 For questions about this Privacy Policy or to exercise your rights, contact us at: <br />
-                <strong>Email:</strong> privacy@allsourced.eu <br />
-                <strong>Address:</strong> De Nieuwe Erven 3 Unit 12630, 5431NV Cuijk, The Netherlands
+                <strong>Email:</strong> info@allsourced.nl <br />
+                <strong>Address:</strong> Keizersgracht 520 H, 1017EK Amsterdam, The Netherlands
               </p>
             </section>
 
