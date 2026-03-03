@@ -53,7 +53,7 @@ export default function DedicatedPage() {
       period: "per BM",
       description: "Reduced risk of ad account bans",
       features: [
-        "Verified badge for increased trust",
+        "Aged",
         "Higher ad spend limits",
         "Reduced risk of ad account bans",
         "Access to Facebook support",
