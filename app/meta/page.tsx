@@ -48,7 +48,7 @@ export default function DedicatedPage() {
       buttonCta: "Contact Us",
     },
     {
-      name: "Verified Business Manager",
+      name: "Business Manager",
       price: "€125.00",
       period: "per BM",
       description: "Reduced risk of ad account bans",

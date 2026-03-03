@@ -24,7 +24,7 @@ export default function Home() {
       suffix: " Store",
     },
     description:
-      "AllSourced provides all the solutions you need to succeed with your e-commerce business.",
+      "AllSourced provides all the solutions you need to succeed with your e-commerce or advertising.",
     buttons: [
       {
         text: "Our Services",
