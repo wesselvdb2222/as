@@ -26,6 +26,7 @@ import {
 } from "lucide-react"
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import { SiFacebook, SiGoogleads, SiGmail } from "react-icons/si"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export default function Header() {
@@ -42,36 +43,28 @@ export default function Header() {
 
   const navigation = [
     {
-      text: "Services",
-      type: "dropdown",
-      icon: <Menu className="w-4 h-4 mr-2" />,
-      items: [
-        {
-          text: "Facebook",
-          href: "/meta",
-          icon: <Facebook className="w-4 h-4 mr-2" />,
-        },
-        {
-          text: "Email Marketing",
-          href: "/email",
-          icon: <Mail className="w-4 h-4 mr-2" />,
-        },
-        {
-          text: "Google",
-          href: "/google",
-          icon: <Database className="w-4 h-4 mr-2" />,
-        },
-        {
-          text: "Suppliers",
-          href: "https://api.whatsapp.com/send?phone=31647415437&text=Hi%2C%0A%0AI%27m%20interested%20in%20the%20suppliers.",
-          icon: <Package className="w-4 h-4 mr-2" />,
-        },
-      ],
+      text: "Facebook",
+      type: "link",
+      href: "/meta",
+      icon: <SiFacebook className="w-3.5 h-3.5 mr-1.5" />,
     },
     {
-      text: "Custom Liquids",
-      href: "https://go.allsourced.agency/",
-      icon: <Code className="w-4 h-4 mr-2" />,
+      text: "Email Marketing",
+      type: "link",
+      href: "/email",
+      icon: <SiGmail className="w-3.5 h-3.5 mr-1.5" />,
+    },
+    {
+      text: "Google",
+      type: "link",
+      href: "/google",
+      icon: <SiGoogleads className="w-3.5 h-3.5 mr-1.5" />,
+    },
+    {
+      text: "Suppliers",
+      type: "link",
+      href: "https://api.whatsapp.com/send?phone=31647415437&text=Hi%2C%0A%0AI%27m%20interested%20in%20the%20suppliers.",
+      icon: <Package className="w-3.5 h-3.5 mr-1.5" />,
     },
     {
       text: "Help",
@@ -147,7 +140,7 @@ export default function Header() {
         scrolled ? "bg-black/80 backdrop-blur-md border-b border-primary-500/20 py-2" : "bg-transparent py-4"
       }`}
     >
-      <div className="container flex items-center justify-between px-4 mx-auto">
+      <div className="container flex items-center justify-between px-4 mx-auto relative">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
             <Image src={brand.logo || "/placeholder.svg"} alt={brand.alt} width={53} height={29} />
@@ -158,7 +151,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden lg:!flex md:!flex items-center gap-8" style={{ display: "none" }}>
+        <nav className="hidden lg:!flex md:!flex items-center gap-8 absolute left-1/2 -translate-x-1/2" style={{ display: "none" }}>
           {navigation.map((item, index) => {
             if (item.type === "dropdown") {
               return (
@@ -193,65 +186,18 @@ export default function Header() {
             }
             return (
               <Link
-              key={index}
-              href={item.href || "#"}
-              className="text-white hover:text-white transition-colors relative group flex items-center"
+                key={index}
+                href={item.href || "#"}
+                className="text-gray-300 hover:text-primary-400 transition-colors relative group flex items-center"
               >
-              {item.icon}
-              {item.text}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-400 group-hover:w-full transition-all duration-300"></span>
+                {item.icon}
+                {item.text}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-400 group-hover:w-full transition-all duration-300"></span>
               </Link>
             )
           })}
         </nav>
 
-        <div className="hidden lg:!flex md:!flex items-center gap-4" style={{ display: "none" }}>
-          {buttons.map((button, index) => {
-            if (button.variant === "link") {
-              return (
-                <Link
-                  key={index}
-                  href={button.href}
-                  className="text-gray-300 hover:text-primary-400 transition-colors relative group px-4 py-2"
-                >
-                  {button.text}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-400 group-hover:w-full transition-all duration-300"></span>
-                </Link>
-              )
-            } else {
-              return (
-                <Button
-                  key={index}
-                  className="relative overflow-hidden group bg-gradient-to-r from-primary-500 to-primary-400 hover:from-primary-400 hover:to-primary-500 text-black font-bold transition-all duration-300 shadow-[0_0_15px_rgba(138,79,255,0.3)] hover:shadow-[0_0_25px_rgba(138,79,255,0.5)]"
-                  onClick={button.href === "#hosting-options" ? scrollToHostingOptions : undefined}
-                  asChild={button.href !== "#hosting-options"}
-                >
-                  {button.href !== "#hosting-options" ? (
-                    <Link href={button.href}>
-                      <span className="relative z-10 flex items-center">
-                        {button.text}
-                        {button.icon === "ChevronRight" && (
-                          <ChevronRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                        )}
-                      </span>
-                      <span className="absolute inset-0 w-full h-full bg-white/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-                    </Link>
-                  ) : (
-                    <>
-                      <span className="relative z-10 flex items-center">
-                        {button.text}
-                        {button.icon === "ChevronRight" && (
-                          <ChevronRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                        )}
-                      </span>
-                      <span className="absolute inset-0 w-full h-full bg-white/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-                    </>
-                  )}
-                </Button>
-              )
-            }
-          })}
-        </div>
 
         {mobileMenu.showMobileMenu && (
           <button
@@ -265,34 +211,28 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && mobileMenu.showMobileMenu && (
-        <div
-          className="lg:!hidden bg-black/95 backdrop-blur-md border-b border-primary-500/20 animate-fadeIn"
-          style={{ display: isMenuOpen ? "block" : "none" }}
-        >
-          <div className="container px-4 py-4 mx-auto">
-            <nav className="flex flex-col gap-4">
+      {isMenuOpen && (
+        <div className="lg:!hidden bg-black/95 backdrop-blur-md border-b border-primary-500/20 animate-fadeIn">
+          <div className="container px-4 py-6 mx-auto">
+            <nav className="flex flex-col gap-1">
               {navigation.map((item, index) => {
                 if (item.type === "dropdown") {
                   return (
-                    <div key={index} className="py-3 px-4">
-                      <div className="text-gray-300 font-medium mb-2 flex items-center">
-                        {item.icon}
+                    <div key={index}>
+                      <p className="text-xs font-semibold tracking-widest uppercase text-gray-500 px-4 pt-4 pb-2">
                         {item.text}
-                      </div>
-                      <div className="pl-4 flex flex-col gap-6">
-                        {item.items?.map((subItem, subIndex) => (
-                          <Link
-                            key={subIndex}
-                            href={subItem.href}
-                            className="text-gray-300 hover:text-primary-400 transition-colors py-2 flex items-center"
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {subItem.icon}
-                            {subItem.text}
-                          </Link>
-                        ))}
-                      </div>
+                      </p>
+                      {item.items?.map((subItem, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          href={subItem.href}
+                          className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:text-primary-400 hover:bg-primary-500/5 transition-colors"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {subItem.icon}
+                          <span className="text-sm">{subItem.text}</span>
+                        </Link>
+                      ))}
                     </div>
                   )
                 }
@@ -300,44 +240,26 @@ export default function Header() {
                   <Link
                     key={index}
                     href={item.href || "#"}
-                    className="text-gray-300 hover:text-primary-400 transition-colors py-3 px-4 rounded-lg hover:bg-primary-500/5 flex items-center"
+                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:text-primary-400 hover:bg-primary-500/5 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.icon}
-                    {item.text}
+                    <span className="text-sm">{item.text}</span>
                   </Link>
                 )
               })}
-              <div className="flex flex-col gap-3 pt-4 border-t border-primary-500/20 mt-2">
-                {buttons.map((button, index) => {
-                  if (button.variant === "link") {
-                    return (
-                      <Link
-                        key={index}
-                        href={button.href}
-                        className="text-gray-300 hover:text-primary-400 transition-colors py-3 px-4 rounded-lg hover:bg-primary-500/5"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {button.text}
-                      </Link>
-                    )
-                  } else {
-                    return (
-                      <Button
-                        key={index}
-                        className="bg-gradient-to-r from-primary-500 to-primary-400 hover:from-primary-400 hover:to-primary-500 text-black font-bold"
-                        onClick={button.href === "#hosting-options" ? scrollToHostingOptions : undefined}
-                        asChild={button.href !== "#hosting-options"}
-                      >
-                        {button.href !== "#hosting-options" ? (
-                          <Link href={button.href}>{button.text}</Link>
-                        ) : (
-                          <>{button.text}</>
-                        )}
-                      </Button>
-                    )
-                  }
-                })}
+
+              {/* CTA onderaan */}
+              <div className="pt-4 mt-2 border-t border-primary-500/20">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=31647415437&text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-gradient-to-r from-primary-500 to-primary-400 text-white font-semibold text-sm"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact us
+                </a>
               </div>
             </nav>
           </div>

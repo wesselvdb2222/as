@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(node -e \"const si = require\\('react-icons/si'\\); ['SiMeta','SiSnapchat','SiPinterest','SiGoogle','SiFacebook','SiInstagram','SiShopify','SiKlaviyo'].forEach\\(n => console.log\\(n, !!si[n]\\)\\)\")",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/cobe/package.json'\\).version\\)\")",
+      "Bash(npm uninstall:*)",
+      "Bash(node -e \"const si = require\\('react-icons/si'\\); ['SiInstagram','SiLinkedin','SiFacebook'].forEach\\(n => console.log\\(n, !!si[n]\\)\\)\")",
+      "Bash(node:*)"
+    ]
+  }
+}

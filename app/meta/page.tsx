@@ -4,6 +4,7 @@ import DiscordCTA from "@/components/discord-cta"
 import { Check } from "lucide-react"
 import Link from "next/link"
 import Pricing from "@/components/pricing"
+import Image from "next/image"
 
 export const metadata = {
   title: "Meta Services - AllSourced",
@@ -65,13 +66,29 @@ export default function DedicatedPage() {
     },
     {
       name: "Reinstated Profile",
-      price: "€59.00",
+      price: "€69.00",
       period: "per profile",
       description: "Restore access to Facebook with a profile that has been successfully reinstated.",
       features: [
         "Bypasses previous restrictions or bans",
         "Ready to use for business or advertising",
         "Reduced risk of immediate re-suspension",
+        "Can be linked to Business Managers",
+        "24/7 Support for setup and troubleshooting",
+      ],
+      popular: false,
+      buttonLink: "https://api.whatsapp.com/send/?phone=31647415437&text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.&type=phone_number&app_absent=0",
+      buttonCta: "Contact Us",
+    },
+    {
+      name: "Aged Profile",
+      price: "€59.00",
+      period: "per profile",
+      description: "Get access to an aged Facebook profile with established history for more stable advertising.",
+      features: [
+        "Established account history",
+        "Ready to use for business or advertising",
+        "Lower risk of restrictions",
         "Can be linked to Business Managers",
         "24/7 Support for setup and troubleshooting",
       ],
@@ -127,6 +144,9 @@ export default function DedicatedPage() {
       <section className="pt-32 pb-16 relative">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="flex justify-center mb-6">
+              <Image src="/meta.svg" alt="Meta" width={120} height={40} className="h-10 w-auto brightness-0 invert" />
+            </div>
             <h1 className="mb-6 text-4xl font-bold text-white md:text-5xl">Meta Services</h1>
             <p className="mb-8 text-xl text-gray-400">
               AllSourced provides services for Meta platforms, including custom solutions and dedicated support.

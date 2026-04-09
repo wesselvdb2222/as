@@ -1,8 +1,8 @@
 import { SpaceBackground } from "@/components/space-background"
 
 export const metadata = {
-  title: "Terms of Service - AllSourced (Ceex)",
-  description: "Terms and conditions for using AllSourced services operated by Ceex.",
+  title: "Terms of Service - AllSourced",
+  description: "Terms and conditions for using AllSourced services.",
 }
 
 export default function TermsOfServicePage() {
@@ -11,7 +11,7 @@ export default function TermsOfServicePage() {
       <SpaceBackground />
       <div className="container px-4 mx-auto">
         <div className="max-w-4xl mx-auto">
-          <h1 className="mb-8 text-4xl font-bold text-white">Terms and Conditions – AllSourced (operated by Ceex)</h1>
+          <h1 className="mb-8 text-4xl font-bold text-white">Terms and Conditions – AllSourced</h1>
 
           <div className="p-8 border rounded-lg border-primary-500/20 bg-[#010901]/70 backdrop-blur-md space-y-6 text-gray-300">
             <section>
@@ -25,7 +25,7 @@ export default function TermsOfServicePage() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">1. Definitions</h2>
               <p>
-                “AllSourced”, “Ceex”, “we”, or “us” refers to the registered company Ceex operating under the trade name AllSourced.
+                “AllSourced”, “we”, or “us” refers to AllSourced, registered in the Netherlands under KVK number 97995177.
                 “Client” refers exclusively to the business (B2B) customer entering into a service agreement with us.
                 “Services” refer to all digital services provided by AllSourced, including but not limited to consultancy, development, and platform-based solutions.
               </p>

@@ -1,8 +1,8 @@
 import { SpaceBackground } from "@/components/space-background"
 
 export const metadata = {
-  title: "Privacy Policy - AllSourced (Ceex)",
-  description: "Privacy policy and data handling practices for AllSourced services operated by Ceex.",
+  title: "Privacy Policy - AllSourced",
+  description: "Privacy policy and data handling practices for AllSourced services.",
 }
 
 export default function PrivacyPolicyPage() {
@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">1. Introduction</h2>
               <p>
-                At AllSourced (operated by AxisDigital), we value your privacy and are committed to handling personal data responsibly and transparently. 
+                At AllSourced (KVK: 97995177, Keizersgracht 520 H, 1017EK Amsterdam), we value your privacy and are committed to handling personal data responsibly and transparently.
                 This privacy policy outlines how we collect, use, and protect business-related data in accordance with Dutch law.
               </p>
             </section>

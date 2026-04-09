@@ -6,22 +6,26 @@ import { ChevronRight } from "lucide-react"
 import HostingOptions from "@/components/hosting-options"
 import Video from "@/components/video"
 import Testimonials from "@/components/testimonials"
+import TrustpilotWidget from "@/components/trustpilot-widget"
 import FAQ from "@/components/faq"
 import { SpaceBackground } from "@/components/space-background"
 import Link from "next/link"
-import DiscordWidget from "@/components/discord-widget"
+import Image from "next/image"
+import dynamic from "next/dynamic"
+const Globe = dynamic(() => import("@/components/globe"), { ssr: false })
+import LogoSlider from "@/components/logo-slider"
 
 export default function Home() {
   // Hardcoded hero data
   const hero = {
     badge: {
-      text: "Q1 = time to scale your store! 🤝",
+      text: "Bulletproof Facebook Structures & Ad Accounts",
       showPulse: true,
     },
     title: {
-      prefix: "Solutions For ",
-      highlight: "Your Dropshipping",
-      suffix: " Store",
+      prefix: "Solutions for ",
+      highlight: "your e-commerce",
+      suffix: " business",
     },
     description:
       "AllSourced provides all the solutions you need to succeed with your e-commerce or advertising.",
@@ -33,52 +37,25 @@ export default function Home() {
         href: "#hosting-options",
       },
       {
-        text: "Contact Us",
+        text: "Become a partner",
         variant: "outline",
-        href: "https://api.whatsapp.com/send/?phone=31647415437&text&type=phone_number&app_absent=0",
+        href: "https://api.whatsapp.com/send/?phone=31647415437&text=I%20want%20to%20become%20a%20partner&type=phone_number&app_absent=0",
       },
     ],
   }
 
-  // Add scroll reveal effect
+  // Scroll reveal via IntersectionObserver (no scroll listener overhead)
   useEffect(() => {
-    const revealElements = document.querySelectorAll(".reveal:not(.hero-element)")
-    const revealStaggerElements = document.querySelectorAll(".reveal-stagger")
+    document.querySelectorAll(".hero-element").forEach((el) => el.classList.add("active"))
 
-    // Immediately show hero elements
-    const heroElements = document.querySelectorAll(".hero-element")
-    heroElements.forEach((el) => {
-      el.classList.add("active")
-    })
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("active"); observer.unobserve(e.target) } }),
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+    )
 
-    const revealOnScroll = () => {
-      for (let i = 0; i < revealElements.length; i++) {
-        const windowHeight = window.innerHeight
-        const elementTop = revealElements[i].getBoundingClientRect().top
-        const elementVisible = 150
+    document.querySelectorAll(".reveal:not(.hero-element), .reveal-stagger").forEach((el) => observer.observe(el))
 
-        if (elementTop < windowHeight - elementVisible) {
-          revealElements[i].classList.add("active")
-        }
-      }
-
-      for (let i = 0; i < revealStaggerElements.length; i++) {
-        const windowHeight = window.innerHeight
-        const elementTop = revealStaggerElements[i].getBoundingClientRect().top
-        const elementVisible = 150
-
-        if (elementTop < windowHeight - elementVisible) {
-          revealStaggerElements[i].classList.add("active")
-        }
-      }
-    }
-
-    // Run once immediately to check elements in viewport on load
-    revealOnScroll()
-
-    window.addEventListener("scroll", revealOnScroll)
-
-    return () => window.removeEventListener("scroll", revealOnScroll)
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -89,7 +66,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full py-32 overflow-hidden">
       <div className="container relative z-10 px-4 mx-auto">
-        <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
+        <div className="grid items-center grid-cols-1 gap-6 md:grid-cols-2 max-w-5xl mx-auto">
         <div className="space-y-8 text-center md:text-left hero-element opacity-100 transform-none">
           <div className="inline-flex items-center px-3 py-1 space-x-2 text-sm bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-400">
           {hero.badge.showPulse && (
@@ -98,12 +75,11 @@ export default function Home() {
           <span>{hero.badge.text}</span>
           </div>
 
-          <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-          {hero.title.prefix}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-primary-300 to-primary-500 animate-gradient">
-            {hero.title.highlight}
-          </span>
-          {hero.title.suffix}
+          <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-4xl lg:text-5xl leading-tight">
+            <span className="block">{hero.title.prefix}</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-primary-300 to-primary-500 animate-gradient">
+              {hero.title.highlight}{hero.title.suffix}
+            </span>
           </h1>
 
           <p className="max-w-[600px] text-gray-400 md:text-xl">{hero.description}</p>
@@ -163,21 +139,27 @@ export default function Home() {
             ),
             )}
           </div>
+
+          {/* Trustpilot badge */}
+          <a href="https://nl.trustpilot.com/review/allsourced.nl" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 md:justify-start justify-center hover:opacity-80 transition-opacity duration-200">
+            <Image src="/stars.svg" alt="5 sterren" width={120} height={24} className="h-6 w-auto" />
+            <span className="text-sm text-gray-400">
+              <span className="text-white font-semibold">4.8</span> on{" "}
+              <span className="text-white font-semibold">Trustpilot</span>
+            </span>
+          </a>
         </div>
 
-        {/* REPLACED IMAGE WITH DISCORD WIDGET */}
+        {/* Globe */}
         <div className="relative flex justify-center hero-element opacity-100 transform-none">
-          <div className="relative w-full max-w-md">
-          <div className="absolute inset-0 bg-primary-500/20 rounded-full blur-3xl animate-pulse"></div>
-
-          <div className="relative z-10 flex justify-center transition-transform duration-700 hover:scale-[1.02]">
-            <DiscordWidget />
-          </div>
-          </div>
+          <Globe />
         </div>
         </div>
       </div>
       </section>
+
+      {/* Logo Slider */}
+      <LogoSlider />
 
       {/* Hosting Options */}
       <Video />
@@ -185,16 +167,27 @@ export default function Home() {
       {/* Hosting Options */}
       <HostingOptions />
 
-      {/* Testimonials */}
-      <Testimonials />
+      {/* Trustpilot Widget */}
+      <section className="py-16 relative">
+        <div className="container px-4 mx-auto max-w-5xl">
+          <div className="max-w-3xl mx-auto mb-10 text-center reveal">
+            <div className="inline-flex items-center px-3 py-1 space-x-2 text-sm bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-400 mb-4">
+              <span>Testimonials</span>
+            </div>
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">What our customers say</h2>
+            <p className="text-gray-400">Don't just take our word for it. Here's what our customers have to say about our services.</p>
+          </div>
+          <TrustpilotWidget />
+        </div>
+      </section>
 
       {/* FAQ */}
       <FAQ />
 
       {/* WhatsApp Button */}
-      <div className="fixed bottom-4 right-4">
+      <div className="fixed bottom-4 right-4 z-[9999]">
       <a
-        href="https://api.whatsapp.com/send/?phone=31647415437&text=Hello! I would like to know more about your services.&type=phone_number&app_absent=0"
+        href="https://api.whatsapp.com/send/?phone=31647415437&text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services.&type=phone_number&app_absent=0"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all duration-300"
