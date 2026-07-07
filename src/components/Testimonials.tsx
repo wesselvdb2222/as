@@ -1,107 +1,149 @@
 "use client";
 
 import Image from "next/image";
-import { motion, type Variants } from "framer-motion";
+import Link from "next/link";
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import { ArrowLeftIcon, ArrowRightIcon } from "./icons";
 
-const TESTIMONIALS = [
+const REVIEWS = [
   {
+    title: "Reliable and Professional Partner for Your Online Business",
+    date: "Jan 28, 2025",
     quote:
-      "AllSourced took over our entire ad account structure and cleaned up years of technical debt in weeks. Our ROAS improved almost immediately.",
-    name: "Sanne de Vries",
-    company: "Founder, Loome",
+      "I've been working with Allsourced for a while now for Facebook ad accounts and email marketing, and I'm very satisfied. Everything is handled professionally and efficiently, and they always respond quickly to questions. The ad account they provided performs exceptionally well.",
+    name: "Kenan Agziballi",
   },
   {
-    quote:
-      "Finally an agency that treats email marketing as a real revenue channel instead of an afterthought. Our flows run on autopilot now.",
-    name: "Tom Bakker",
-    company: "E-commerce Manager, Northlane",
+    title: "Great Service",
+    date: "Jan 28, 2025",
+    quote: "Great products, quick communication and fantastic service. 5/5.",
+    name: "Thijs Bastiaans",
   },
   {
+    title: "Amazing experience with this agency",
+    date: "Aug 5, 2024",
     quote:
-      "Fulfillment used to be our biggest bottleneck. AllSourced plugged straight into our stack and orders just ship now.",
-    name: "Priya Patel",
-    company: "Operations Lead, Verdant",
+      "Amazing experience with this agency. Got my stuff sorted out really quick. Communication is key for me, and they def. have this on point.",
+    name: "Jonathan Agba",
+  },
+  {
+    title: "Great assets & service",
+    date: "Oct 23, 2024",
+    quote:
+      "Great products, with very good service. I would highly recommend buying assets from these guys. :)",
+    name: "Hens Boer",
+  },
+  {
+    title: "Very satisfied about their services",
+    date: "Aug 3, 2024",
+    quote:
+      "Very satisfied about their services. They sourced my FB ad account and this process went really smooth. Greatly recommended!",
+    name: "Eef van de Voort",
   },
 ];
 
-const container: Variants = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.12 },
-  },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
-
 export default function Testimonials() {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  const scrollByCard = (direction: 1 | -1) => {
+    scrollerRef.current?.scrollBy({ left: direction * 300, behavior: "smooth" });
+  };
+
   return (
-    <section className="bg-background py-24 sm:py-32">
+    <section className="bg-background py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="mx-auto flex max-w-2xl flex-col items-center text-center"
+          className="flex flex-col gap-10 lg:flex-row lg:items-center"
         >
-          <Image
-            src="/trustpilot-stars-5.svg"
-            alt="5 stars"
-            width={112}
-            height={21}
-          />
-          <h2 className="mt-6 text-3xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            What customers say about us
-          </h2>
-          <p className="mt-4 text-lg text-muted">
-            Rated 4.8 out of 5 based on 51 reviews on Trustpilot.
-          </p>
-        </motion.div>
+          <div className="flex shrink-0 flex-col items-center gap-3 text-center lg:w-56 lg:items-start lg:text-left">
+            <p className="text-2xl font-semibold text-foreground">
+              Excellent
+            </p>
+            <Image
+              src="/trustpilot-stars-5.svg"
+              alt="5 stars"
+              width={140}
+              height={26}
+            />
+            <p className="text-sm text-muted">
+              Based on{" "}
+              <span className="font-semibold text-foreground underline underline-offset-2">
+                51 reviews
+              </span>
+            </p>
+            <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
+              <span className="text-[#00b67a]">&#9733;</span>
+              Trustpilot
+            </div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="mt-16 grid gap-6 sm:grid-cols-3"
-        >
-          {TESTIMONIALS.map(({ quote, name, company }) => (
-            <motion.div
-              key={name}
-              variants={item}
-              className="flex flex-col rounded-lg border border-white/10 bg-white/[0.03] p-8"
-            >
-              <Image
-                src="/trustpilot-stars-5.svg"
-                alt="5 stars"
-                width={80}
-                height={15}
-              />
-              <p className="mt-5 flex-1 text-sm leading-relaxed text-foreground">
-                &ldquo;{quote}&rdquo;
-              </p>
-              <div className="mt-6">
-                <p className="text-sm font-semibold text-foreground">
-                  {name}
+            <div className="mt-4 hidden gap-2 lg:flex">
+              <button
+                type="button"
+                onClick={() => scrollByCard(-1)}
+                aria-label="Previous reviews"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-foreground transition-colors hover:bg-white/[0.06]"
+              >
+                <ArrowLeftIcon className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollByCard(1)}
+                aria-label="Next reviews"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-foreground transition-colors hover:bg-white/[0.06]"
+              >
+                <ArrowRightIcon className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+
+          <div
+            ref={scrollerRef}
+            className="flex flex-1 snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {REVIEWS.map((review) => (
+              <div
+                key={review.name}
+                className="flex w-72 shrink-0 snap-start flex-col rounded-lg border border-white/10 bg-white/[0.03] p-6"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <Image
+                    src="/trustpilot-stars-5.svg"
+                    alt="5 stars"
+                    width={88}
+                    height={16}
+                  />
+                  <span className="shrink-0 text-xs text-muted">
+                    {review.date}
+                  </span>
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-foreground">
+                  {review.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                  {review.quote}
                 </p>
-                <p className="text-sm text-muted">{company}</p>
+                <p className="mt-4 text-sm font-medium text-foreground">
+                  {review.name}
+                </p>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </motion.div>
 
-        <div className="mt-12 text-center">
-          <a
+        <div className="mt-10 text-center">
+          <Link
             href="https://www.trustpilot.com/review/allsourced.nl"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium text-brand transition-colors hover:text-fuchsia-400"
           >
             Read all reviews on Trustpilot &rarr;
-          </a>
+          </Link>
         </div>
       </div>
     </section>
