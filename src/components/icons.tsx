@@ -1,3 +1,11 @@
+export function StarIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 20 20" fill="currentColor" className={className} aria-hidden>
+      <path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.2 6.1-.6Z" />
+    </svg>
+  );
+}
+
 export function MailIcon({ className }: { className?: string }) {
   return (
     <svg

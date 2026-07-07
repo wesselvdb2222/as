@@ -25,11 +25,11 @@ export default function Hero() {
         </span>
 
         <h1 className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
-          We handle your{" "}
+          Stable accounts. Clean structures.
+          <br className="hidden sm:block" />{" "}
           <span className="bg-gradient-to-r from-brand to-fuchsia-400 bg-clip-text text-transparent">
-            backend
+            Zero downtime.
           </span>
-          .
         </h1>
 
         <p className="mt-6 max-w-3xl text-balance text-lg text-muted">
@@ -38,19 +38,19 @@ export default function Hero() {
           on your brand, not your stack.
         </p>
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-10 flex flex-row flex-wrap justify-center gap-3">
           <Link
             href="https://wa.me/31647415437"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-b from-[#a374ff] to-brand px-6 py-3 text-sm font-semibold text-brand-foreground shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_8px_20px_-4px_rgba(146,86,255,0.55)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-b from-[#a374ff] to-brand px-4 py-3 text-sm font-semibold text-brand-foreground shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_8px_20px_-4px_rgba(146,86,255,0.55)] transition-transform hover:scale-[1.02] active:scale-[0.98] sm:px-6"
           >
             <WhatsAppIcon className="h-4 w-4" />
             Chat on WhatsApp
           </Link>
           <Link
             href="#services"
-            className="inline-flex items-center justify-center rounded-lg bg-white/[0.06] px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/[0.1]"
+            className="inline-flex items-center justify-center rounded-lg bg-white/[0.06] px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/[0.1] sm:px-6"
           >
             View Services
           </Link>

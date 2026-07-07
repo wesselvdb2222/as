@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { WhatsAppIcon } from "./icons";
 
 const COMPANY_LINKS = [
   { label: "Services", href: "#services" },
@@ -37,15 +36,6 @@ export default function Footer() {
               We handle your backend. Ready-to-use e-commerce services, run
               by our team so you do not have to.
             </p>
-            <Link
-              href="https://wa.me/31647415437"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-b from-[#a374ff] to-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_8px_20px_-4px_rgba(146,86,255,0.55)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <WhatsAppIcon className="h-4 w-4" />
-              Chat on WhatsApp
-            </Link>
           </div>
 
           <div>

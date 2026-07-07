@@ -4,16 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeftIcon, ArrowRightIcon } from "./icons";
+import { ArrowLeftIcon, ArrowRightIcon, StarIcon } from "./icons";
 
 const REVIEWS = [
-  {
-    title: "Reliable and Professional Partner for Your Online Business",
-    date: "Jan 28, 2025",
-    quote:
-      "I've been working with Allsourced for a while now for Facebook ad accounts and email marketing, and I'm very satisfied. Everything is handled professionally and efficiently, and they always respond quickly to questions. The ad account they provided performs exceptionally well.",
-    name: "Kenan Agziballi",
-  },
   {
     title: "Great Service",
     date: "Jan 28, 2025",
@@ -51,7 +44,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-background py-12 sm:py-16">
+    <section id="reviews" className="bg-background py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -77,7 +70,7 @@ export default function Testimonials() {
               </span>
             </p>
             <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
-              <span className="text-[#00b67a]">&#9733;</span>
+              <StarIcon className="h-3.5 w-3.5 shrink-0 text-[#00b67a]" />
               Trustpilot
             </div>
 

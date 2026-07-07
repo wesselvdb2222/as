@@ -7,9 +7,7 @@ import { WhatsAppIcon } from "./icons";
 
 const NAV_LINKS = [
   { label: "Services", href: "#services" },
-  { label: "Approach", href: "#approach" },
-  { label: "Cases", href: "#cases" },
-  { label: "About", href: "#about" },
+  { label: "Reviews", href: "#reviews" },
 ];
 
 export default function Topbar() {
