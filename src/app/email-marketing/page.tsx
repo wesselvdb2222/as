@@ -4,10 +4,25 @@ import Topbar from "@/components/Topbar";
 import Footer from "@/components/Footer";
 import { CheckIcon, MailIcon, WhatsAppIcon } from "@/components/icons";
 
+const TITLE = "Email Marketing";
+const DESCRIPTION =
+  "Email marketing services by AllSourced: flows, campaigns, and lifecycle automation that turn one time buyers into repeat customers.";
+
 export const metadata: Metadata = {
-  title: "Email Marketing | AllSourced",
-  description:
-    "Email marketing services by AllSourced: flows, campaigns, and lifecycle automation that turn one time buyers into repeat customers.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/email-marketing",
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/email-marketing",
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 const PACKAGES: {

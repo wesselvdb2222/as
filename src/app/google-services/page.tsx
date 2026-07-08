@@ -4,10 +4,25 @@ import Topbar from "@/components/Topbar";
 import Footer from "@/components/Footer";
 import { CheckIcon, GoogleLogo, WhatsAppIcon } from "@/components/icons";
 
+const TITLE = "Google Services";
+const DESCRIPTION =
+  "Google advertising services by AllSourced: Merchant Center approval, Search, Shopping, and Performance Max campaigns.";
+
 export const metadata: Metadata = {
-  title: "Google Services | AllSourced",
-  description:
-    "Google advertising services by AllSourced: Merchant Center approval, Search, Shopping, and Performance Max campaigns.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/google-services",
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/google-services",
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 const PACKAGES: {

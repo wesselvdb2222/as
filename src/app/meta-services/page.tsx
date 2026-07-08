@@ -4,10 +4,25 @@ import Topbar from "@/components/Topbar";
 import Footer from "@/components/Footer";
 import { CheckIcon, MetaLogo, WhatsAppIcon } from "@/components/icons";
 
+const TITLE = "Meta Services";
+const DESCRIPTION =
+  "Meta advertising services by AllSourced: campaign structures, creative testing, audience strategy, and tracking for Facebook and Instagram.";
+
 export const metadata: Metadata = {
-  title: "Meta Services | AllSourced",
-  description:
-    "Meta advertising services by AllSourced: campaign structures, creative testing, audience strategy, and tracking for Facebook and Instagram.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/meta-services",
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/meta-services",
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 const PACKAGES = [

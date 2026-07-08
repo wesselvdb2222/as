@@ -5,10 +5,25 @@ import Footer from "@/components/Footer";
 import FulfillmentFlow from "@/components/FulfillmentFlow";
 import { BoxIcon, CheckIcon, WhatsAppIcon } from "@/components/icons";
 
+const TITLE = "Fulfillment";
+const DESCRIPTION =
+  "Fulfillment services by AllSourced: warehousing, pick and pack, and shipping handled end to end, so orders reach customers on time.";
+
 export const metadata: Metadata = {
-  title: "Fulfillment | AllSourced",
-  description:
-    "Fulfillment services by AllSourced: warehousing, pick and pack, and shipping handled end to end, so orders reach customers on time.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/fulfillment",
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/fulfillment",
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 const PACKAGES: {

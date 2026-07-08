@@ -46,12 +46,16 @@ export default function Testimonials() {
   return (
     <section id="reviews" className="bg-background py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-6">
+        <h2 className="text-center text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          What clients say about us
+        </h2>
+
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col gap-10 lg:flex-row lg:items-center"
+          className="mt-10 flex flex-col gap-10 lg:flex-row lg:items-center"
         >
           <div className="flex shrink-0 flex-col items-center gap-3 text-center lg:w-56 lg:items-start lg:text-left">
             <p className="text-2xl font-semibold text-foreground">
