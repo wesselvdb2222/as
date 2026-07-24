@@ -44,7 +44,7 @@ function Connector({ highlighted = false }: { highlighted?: boolean }) {
 
 export default function FulfillmentFlow() {
   return (
-    <section className="bg-background py-12 sm:py-16">
+    <section className="border-t border-zinc-100 bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/30 px-6 py-16 sm:px-12 sm:py-20">
           <WorldMapBackground variant="card" />

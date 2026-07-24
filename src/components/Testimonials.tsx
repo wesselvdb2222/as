@@ -44,9 +44,12 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="reviews" className="bg-background py-12 sm:py-16">
+    <section
+      id="reviews"
+      className="border-t border-zinc-100 bg-white py-12 sm:py-16"
+    >
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-center text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        <h2 className="text-center text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
           What clients say about us
         </h2>
 
@@ -58,22 +61,20 @@ export default function Testimonials() {
           className="mt-10 flex flex-col gap-10 lg:flex-row lg:items-center"
         >
           <div className="flex shrink-0 flex-col items-center gap-3 text-center lg:w-56 lg:items-start lg:text-left">
-            <p className="text-2xl font-semibold text-foreground">
-              Excellent
-            </p>
+            <p className="text-2xl font-semibold text-zinc-900">Excellent</p>
             <Image
               src="/trustpilot-stars-5.svg"
               alt="5 stars"
               width={140}
               height={26}
             />
-            <p className="text-sm text-muted">
+            <p className="text-sm text-zinc-500">
               Based on{" "}
-              <span className="font-semibold text-foreground underline underline-offset-2">
+              <span className="font-semibold text-zinc-900 underline underline-offset-2">
                 51 reviews
               </span>
             </p>
-            <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
+            <div className="flex items-center gap-1.5 text-sm font-semibold text-zinc-900">
               <StarIcon className="h-3.5 w-3.5 shrink-0 text-[#00b67a]" />
               Trustpilot
             </div>
@@ -83,7 +84,7 @@ export default function Testimonials() {
                 type="button"
                 onClick={() => scrollByCard(-1)}
                 aria-label="Previous reviews"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-foreground transition-colors hover:bg-white/[0.06]"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 text-zinc-900 transition-colors hover:bg-zinc-50"
               >
                 <ArrowLeftIcon className="h-4 w-4" />
               </button>
@@ -91,7 +92,7 @@ export default function Testimonials() {
                 type="button"
                 onClick={() => scrollByCard(1)}
                 aria-label="Next reviews"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-foreground transition-colors hover:bg-white/[0.06]"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 text-zinc-900 transition-colors hover:bg-zinc-50"
               >
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
@@ -105,7 +106,7 @@ export default function Testimonials() {
             {REVIEWS.map((review) => (
               <div
                 key={review.name}
-                className="flex w-72 shrink-0 snap-start flex-col rounded-lg border border-white/10 bg-white/[0.03] p-6"
+                className="flex w-72 shrink-0 snap-start flex-col rounded-lg border border-zinc-200 bg-white p-6 shadow-sm"
               >
                 <div className="flex items-center justify-between gap-3">
                   <Image
@@ -114,17 +115,17 @@ export default function Testimonials() {
                     width={88}
                     height={16}
                   />
-                  <span className="shrink-0 text-xs text-muted">
+                  <span className="shrink-0 text-xs text-zinc-500">
                     {review.date}
                   </span>
                 </div>
-                <h3 className="mt-4 text-sm font-semibold text-foreground">
+                <h3 className="mt-4 text-sm font-semibold text-zinc-900">
                   {review.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500">
                   {review.quote}
                 </p>
-                <p className="mt-4 text-sm font-medium text-foreground">
+                <p className="mt-4 text-sm font-medium text-zinc-900">
                   {review.name}
                 </p>
               </div>

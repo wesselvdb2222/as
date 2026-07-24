@@ -1,3 +1,82 @@
+export function AllSourcedMark({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 48 30"
+      fill="currentColor"
+      className={className}
+      aria-hidden
+    >
+      <path d="M 20.617188 13.546875 C 19.308594 14.195312 17.929688 14.9375 16.519531 15.808594 L 14.953125 12.363281 L 11.988281 18.839844 C 9.210938 20.890625 6.289062 23.363281 3.28125 26.375 L 14.851562 1.539062 L 15 1.539062 Z M 35.859375 1.628906 C 31.496094 1.628906 28.015625 4.347656 28.015625 8.457031 C 28.015625 9.25 28.148438 9.945312 28.375 10.558594 C 30.265625 10.035156 31.898438 9.742188 33.230469 9.585938 C 32.960938 9.292969 32.828125 8.96875 32.828125 8.578125 C 32.828125 7.359375 34.160156 6.316406 35.9375 6.316406 C 37.269531 6.316406 38.636719 6.886719 39.339844 8.308594 L 42.867188 5.847656 C 41.792969 2.972656 39.105469 1.628906 35.859375 1.628906 Z" />
+      <path d="M 44.324219 20.386719 C 44.324219 24.71875 40.785156 27.480469 35.691406 27.480469 C 31.796875 27.480469 28.921875 25.859375 27.332031 22.914062 L 31.148438 20.230469 C 32.199219 21.910156 33.710938 22.679688 35.769531 22.679688 C 38.011719 22.679688 39.519531 21.761719 39.519531 20.5 C 39.519531 18.753906 36.679688 17.386719 34.183594 16.144531 C 33.453125 15.785156 32.714844 15.417969 32.011719 14.992188 C 28.742188 15.785156 25.664062 16.972656 22.878906 18.316406 L 27.164062 27.492188 L 21.894531 27.492188 L 20.359375 24.113281 L 18.726562 20.542969 C 12.90625 23.957031 9.167969 27.449219 9.113281 27.492188 L 3.839844 27.492188 C 6.851562 24.484375 9.773438 21.996094 12.546875 19.960938 C 14.101562 18.820312 15.613281 17.8125 17.082031 16.929688 C 18.5 16.066406 19.867188 15.316406 21.175781 14.667969 C 24.074219 13.234375 26.683594 12.292969 28.933594 11.679688 C 30.824219 11.152344 32.457031 10.863281 33.789062 10.703125 C 34.472656 11.445312 35.949219 11.957031 37.910156 12.875 C 38.679688 13.234375 39.386719 13.605469 40.035156 13.996094 C 42.722656 15.574219 44.324219 17.441406 44.324219 20.386719 Z" />
+    </svg>
+  );
+}
+
+export function UsersIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <circle cx="9" cy="8" r="3.5" />
+      <path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5" />
+      <path d="M16 4.5c1.7.4 3 2 3 3.9 0 1.9-1.3 3.5-3 3.9" />
+      <path d="M17.5 13.7c2.6.5 4.5 2.9 4.5 5.8" />
+    </svg>
+  );
+}
+
+export function GridIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <rect x="3" y="3" width="8" height="8" rx="1.5" />
+      <rect x="13" y="3" width="8" height="8" rx="1.5" />
+      <rect x="3" y="13" width="8" height="8" rx="1.5" />
+      <rect x="13" y="13" width="8" height="8" rx="1.5" />
+    </svg>
+  );
+}
+
+export function SparkleIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" />
+    </svg>
+  );
+}
+
+export function ChevronDownIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  );
+}
+
 export function StarIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 20 20" fill="currentColor" className={className} aria-hidden>

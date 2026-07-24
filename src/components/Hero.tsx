@@ -1,7 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion, type Variants } from "framer-motion";
 import { WhatsAppIcon } from "./icons";
 import WorldMapBackground from "./WorldMapBackground";
+
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export default function Hero() {
   return (
@@ -18,27 +33,44 @@ export default function Hero() {
         className="pointer-events-none absolute left-1/2 top-[-10rem] h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-brand/20 blur-[120px]"
       />
 
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-28 pb-16 text-center sm:pt-36 sm:pb-20">
-        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-medium text-muted">
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={container}
+        className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-16 pb-28 text-center sm:pt-24 sm:pb-32"
+      >
+        <motion.span
+          variants={item}
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-medium text-muted"
+        >
           <span className="h-1.5 w-1.5 rounded-full bg-brand" />
           Trusted by 850+ Global eCommerce Brands
-        </span>
+        </motion.span>
 
-        <h1 className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
-          Stable accounts. Clean structures.
+        <motion.h1
+          variants={item}
+          className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-6xl"
+        >
+          Your e-commerce backend,
           <br className="hidden sm:block" />{" "}
           <span className="bg-gradient-to-r from-brand to-fuchsia-400 bg-clip-text text-transparent">
-            Zero downtime.
+            fully handled.
           </span>
-        </h1>
+        </motion.h1>
 
-        <p className="mt-6 max-w-3xl text-balance text-lg text-muted">
+        <motion.p
+          variants={item}
+          className="mt-6 max-w-3xl text-balance text-lg text-muted"
+        >
           We deliver ready-to-use e-commerce services, including Facebook ad
           structures, email marketing, and Google services, so you can focus
           on your brand, not your stack.
-        </p>
+        </motion.p>
 
-        <div className="mt-10 flex flex-row flex-wrap justify-center gap-3">
+        <motion.div
+          variants={item}
+          className="mt-10 flex flex-row flex-wrap justify-center gap-3"
+        >
           <Link
             href="https://wa.me/31647415437"
             target="_blank"
@@ -54,9 +86,10 @@ export default function Hero() {
           >
             View Services
           </Link>
-        </div>
+        </motion.div>
 
-        <a
+        <motion.a
+          variants={item}
           href="https://www.trustpilot.com/review/allsourced.nl"
           target="_blank"
           rel="noopener noreferrer"
@@ -72,8 +105,8 @@ export default function Hero() {
             <strong className="font-semibold text-foreground">4.8</strong>
             <span>on Trustpilot &middot; 51 reviews</span>
           </span>
-        </a>
-      </div>
+        </motion.a>
+      </motion.div>
     </section>
   );
 }
