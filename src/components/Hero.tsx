@@ -44,17 +44,17 @@ export default function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-medium text-muted"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-          Trusted by 850+ Global eCommerce Brands
+          Trusted by 850+ Digital Businesses online
         </motion.span>
 
         <motion.h1
           variants={item}
           className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-6xl"
         >
-          Your e-commerce backend,
+          Everything you need to scale
           <br className="hidden sm:block" />{" "}
           <span className="bg-gradient-to-r from-brand to-fuchsia-400 bg-clip-text text-transparent">
-            fully handled.
+            your online business.
           </span>
         </motion.h1>
 

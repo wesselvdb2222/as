@@ -6,9 +6,9 @@ import { WhatsAppIcon } from "./icons";
 
 export default function CTA() {
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section className="bg-background py-16 sm:py-24">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
-        <div className="relative overflow-hidden rounded-3xl bg-background py-20 sm:py-28">
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-surface py-20 sm:py-28">
           <div
             aria-hidden
             className="pointer-events-none absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/25 blur-[130px]"

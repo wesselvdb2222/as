@@ -60,7 +60,7 @@ const item: Variants = {
 
 export default function Services() {
   return (
-    <section id="services" className="bg-white py-16 sm:py-24">
+    <section id="services" className="bg-background py-16 sm:py-24">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1a0f30] via-[#0d0716] to-background px-6 py-16 sm:px-12 sm:py-20">
           <div

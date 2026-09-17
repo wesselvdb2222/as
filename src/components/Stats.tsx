@@ -80,7 +80,7 @@ function CountUpNumber({
 
 export default function Stats() {
   return (
-    <section className="bg-white py-12 sm:py-16">
+    <section className="bg-background py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           variants={container}
@@ -94,7 +94,7 @@ export default function Stats() {
               key={stat.label}
               variants={item}
               whileHover={{ y: -4 }}
-              className="relative flex flex-col items-center overflow-hidden rounded-lg border border-zinc-200 bg-white px-6 py-8 text-center shadow-sm transition-shadow hover:shadow-md sm:items-start sm:text-left"
+              className="relative flex flex-col items-center overflow-hidden rounded-lg border border-border bg-white/[0.04] px-6 py-8 text-center backdrop-blur-sm transition-colors hover:bg-white/[0.07] sm:items-start sm:text-left"
             >
               <div
                 aria-hidden
@@ -112,7 +112,7 @@ export default function Stats() {
                   suffix={stat.suffix}
                 />
               </span>
-              <span className="relative mt-1 text-sm text-zinc-500">
+              <span className="relative mt-1 text-sm text-muted">
                 {stat.label}
               </span>
             </motion.div>

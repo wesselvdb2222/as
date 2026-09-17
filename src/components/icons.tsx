@@ -147,7 +147,15 @@ export function GoogleLogo({ className }: { className?: string }) {
 
 export function MetaLogo({ className }: { className?: string }) {
   // eslint-disable-next-line @next/next/no-img-element
-  return <img src="/meta.svg" alt="Meta" className={className} />;
+  return (
+    <img
+      src="/meta.svg"
+      alt="Meta"
+      width={32}
+      height={32}
+      className={className}
+    />
+  );
 }
 
 export function ArrowLeftIcon({ className }: { className?: string }) {

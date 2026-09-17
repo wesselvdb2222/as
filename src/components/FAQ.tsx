@@ -41,13 +41,13 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="border-t border-zinc-100 bg-zinc-50 py-16 sm:py-24">
+    <section className="border-t border-border bg-surface py-16 sm:py-24">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="text-center text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+        <h2 className="text-center text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           Frequently asked questions
         </h2>
 
-        <div className="mt-10 divide-y divide-zinc-200 rounded-lg border border-zinc-200">
+        <div className="mt-10 divide-y divide-border rounded-lg border border-border">
           {FAQS.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
@@ -56,15 +56,15 @@ export default function FAQ() {
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-zinc-50"
+                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-white/[0.04]"
                 >
-                  <span className="text-sm font-semibold text-zinc-900 sm:text-base">
+                  <span className="text-sm font-semibold text-foreground sm:text-base">
                     {faq.question}
                   </span>
                   <motion.span
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
-                    className="shrink-0 text-zinc-400"
+                    className="shrink-0 text-muted"
                   >
                     <ChevronDownIcon className="h-5 w-5" />
                   </motion.span>
@@ -78,7 +78,7 @@ export default function FAQ() {
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="px-6 pb-5 text-sm leading-relaxed text-zinc-500">
+                      <p className="px-6 pb-5 text-sm leading-relaxed text-muted">
                         {faq.answer}
                       </p>
                     </motion.div>

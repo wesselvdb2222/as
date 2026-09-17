@@ -67,7 +67,7 @@ const ORGANIZATION_JSON_LD = {
   "@type": "Organization",
   name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/icon.svg`,
+  logo: `${SITE_URL}/icon.png`,
   description: SITE_DESCRIPTION,
   sameAs: ["https://www.trustpilot.com/review/allsourced.nl"],
   contactPoint: {
