@@ -1,77 +1,27 @@
 @import "tailwindcss";
-@source "../**/*.{ts,tsx}";
-
-:root {
-  --background: #08080c;
-  --surface: #0f0f16;
-  --foreground: #f4f4f6;
-  --muted: #9a9aa8;
-  --border: #ffffff1a;
-  --brand: #9256ff;
-  --brand-foreground: #ffffff;
-}
 
 @theme inline {
-  --color-background: var(--background);
-  --color-surface: var(--surface);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-border: var(--border);
-  --color-brand: var(--brand);
-  --color-brand-foreground: var(--brand-foreground);
+  --color-ink: #07060b;
+  --color-ink-soft: #120f1c;
+  --color-brand: #7c5cf5;
+  --color-brand-light: #9b82ff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 html {
-  color-scheme: dark;
   scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #fff;
 }
 
-@keyframes map-drift {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(-18px, 8px) scale(1.03);
-  }
-}
-
-.animate-map-drift {
-  animation: map-drift 26s ease-in-out infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 28s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *:not(.animate-marquee),
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

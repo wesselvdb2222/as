@@ -1,138 +1,118 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AllSourcedMark } from "./icons";
+import { WHATSAPP_URL } from "@/lib/site";
+import { AvailabilityBanner } from "./AvailabilityBanner";
+import { CurrentYear } from "./CurrentYear";
 
-const SERVICE_LINKS = [
-  { label: "Facebook Structures", href: "#services" },
-  { label: "Email Marketing", href: "#services" },
-  { label: "Google Services", href: "#services" },
-  { label: "Fulfillment", href: "#services" },
-];
+const TRUSTPILOT_URL = "https://www.trustpilot.com/review/allsourced.nl";
 
-export default function Footer() {
+export function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-12 sm:grid-cols-3">
-          <div className="lg:col-span-1">
-            <Link
-              href="/"
-              className="flex items-center gap-2.5 text-muted transition-colors hover:text-foreground"
-            >
-              <AllSourcedMark className="h-6 w-9" />
-              <span className="text-lg font-semibold tracking-tight">
-                AllSourced
-              </span>
-            </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              We handle your backend. Ready-to-use e-commerce services, run
-              by our team so you do not have to.
-            </p>
-            <p className="mt-4 text-sm text-muted">
-              <span className="font-semibold text-foreground">AllSourced</span>
-              <br />
-              Keizersgracht 520 H
-              <br />
-              1017 EK Amsterdam
-            </p>
-          </div>
+    <>
+      <AvailabilityBanner />
 
-          <div>
-            <h3 className="text-sm font-semibold text-foreground">Services</h3>
-            <ul className="mt-4 space-y-3">
-              {SERVICE_LINKS.map((link) => (
-                <li key={link.label}>
+      <footer id="contact" className="border-t border-white/10 bg-black">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
+          <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr]">
+            {/* Brand */}
+            <div>
+              <Link
+                href="/"
+                aria-label="AllSourced home"
+                className="inline-flex items-center gap-2.5"
+              >
+                <Image
+                  src="/allsourced-icon.png"
+                  alt=""
+                  width={1637}
+                  height={961}
+                  className="h-7 w-auto"
+                />
+                <span className="text-lg font-semibold tracking-tight text-white">
+                  AllSourced
+                </span>
+              </Link>
+              <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
+                We handle your backend, so you can focus on your brand.
+              </p>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center rounded-md bg-brand px-3.5 py-2 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-brand-light"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h3 className="text-sm font-semibold text-white">Company</h3>
+              <ul className="mt-4 space-y-3">
+                <li>
                   <Link
-                    href={link.href}
-                    className="text-sm text-muted transition-colors hover:text-foreground"
+                    href="/partners"
+                    className="text-sm text-white/60 transition-colors hover:text-white"
                   >
-                    {link.label}
+                    Partners
                   </Link>
                 </li>
-              ))}
-            </ul>
-          </div>
+                <li>
+                  <a
+                    href={TRUSTPILOT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-white/60 transition-colors hover:text-white"
+                  >
+                    Reviews on Trustpilot
+                  </a>
+                </li>
+                <li>
+                  <Link
+                    href="/terms-of-service"
+                    className="text-sm text-white/60 transition-colors hover:text-white"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="text-sm font-semibold text-foreground">Contact</h3>
-            <ul className="mt-4 space-y-3">
-              <li>
-                <Link
-                  href="https://wa.me/31647415437"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted transition-colors hover:text-foreground"
-                >
-                  +31 6 47415437
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.trustpilot.com/review/allsourced.nl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted transition-colors hover:text-foreground"
-                >
-                  Reviews on Trustpilot
-                </Link>
-              </li>
-            </ul>
-
-            <div className="mt-6 flex items-center gap-3">
-              <Image
-                src="/badge1.webp"
-                alt="GDPR Ready"
-                width={64}
-                height={100}
-                className="h-auto w-14"
-              />
-              <Image
-                src="/badge2.webp"
-                alt="Remote Company"
-                width={64}
-                height={100}
-                className="h-auto w-14"
-              />
+            {/* Contact */}
+            <div>
+              <h3 className="text-sm font-semibold text-white">Contact</h3>
+              <ul className="mt-4 space-y-3 text-sm text-white/60">
+                <li>
+                  <a
+                    href="tel:+31647415437"
+                    className="transition-colors hover:text-white"
+                  >
+                    +31 6 47415437
+                  </a>
+                </li>
+                <li>
+                  <address className="not-italic leading-relaxed">
+                    Keizersgracht 520 H
+                    <br />
+                    1017 EK Amsterdam
+                  </address>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
 
-        <div className="mt-16 flex flex-col items-center gap-4 border-t border-border pt-8 sm:flex-row sm:justify-between">
-          <div className="flex flex-col items-center gap-1 sm:flex-row sm:gap-4">
-            <p className="text-sm text-muted">
-              &copy; {new Date().getFullYear()} AllSourced. All rights
-              reserved.
+          {/* Bottom bar */}
+          <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-white/40 md:flex-row md:items-center md:justify-between">
+            <p>
+              © <CurrentYear /> AllSourced. All rights reserved.
             </p>
-            <Link
-              href="/terms-of-service"
-              className="text-sm text-muted transition-colors hover:text-foreground"
-            >
-              Terms of Service
-            </Link>
+            <p className="max-w-xl md:text-right">
+              This site is not affiliated with or endorsed by Meta Platforms,
+              Inc. or any other platform.
+            </p>
           </div>
-
-          <Link
-            href="https://axisdigital.nl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.04] px-4 py-2 transition-colors hover:bg-white/[0.08]"
-          >
-            <span className="text-xs text-muted">Built by</span>
-            <Image
-              src="/logo-white.png"
-              alt="axisdigital"
-              width={72}
-              height={18}
-            />
-          </Link>
         </div>
-
-        <p className="mt-4 text-center text-xs text-muted sm:text-left">
-          Disclaimer: This website is in no way affiliated with, authorized,
-          maintained, sponsored or endorsed by Meta Platforms, Inc. or any
-          other platform. All images belong to their respective owners.
-        </p>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }

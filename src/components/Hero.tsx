@@ -1,112 +1,112 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
-import { motion, type Variants } from "framer-motion";
-import { WhatsAppIcon } from "./icons";
-import WorldMapBackground from "./WorldMapBackground";
+import { WHATSAPP_URL } from "@/lib/site";
 
-const container: Variants = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
-  },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
-export default function Hero() {
+function Star() {
   return (
-    <section className="relative overflow-hidden">
-      <WorldMapBackground />
+    <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden>
+      <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5Z" />
+    </svg>
+  );
+}
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 [background:radial-gradient(ellipse_60%_60%_at_50%_42%,var(--background)_0%,var(--background)_35%,transparent_75%)]"
+/** Large purple swoosh echoing the curve in the AllSourced logo. */
+function HeroSwoosh() {
+  const swoosh =
+    "M-80 1000 C 420 800, 900 640, 1520 600 L 1520 700 C 960 700, 480 820, -80 1000 Z";
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 1440 900"
+      preserveAspectRatio="xMidYMid slice"
+      className="pointer-events-none absolute inset-0 -z-10 h-full w-full [mask-image:linear-gradient(to_bottom,black_65%,transparent)]"
+    >
+      <defs>
+        <linearGradient id="swoosh-fill" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stopColor="#7c5cf5" stopOpacity="0" />
+          <stop offset="45%" stopColor="#7c5cf5" stopOpacity="0.35" />
+          <stop offset="100%" stopColor="#9b82ff" stopOpacity="0.6" />
+        </linearGradient>
+        <linearGradient id="swoosh-edge" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
+          <stop offset="60%" stopColor="#ffffff" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="#ffffff" stopOpacity="0.45" />
+        </linearGradient>
+        <filter id="swoosh-glow" x="-20%" y="-50%" width="140%" height="200%">
+          <feGaussianBlur stdDeviation="60" />
+        </filter>
+      </defs>
+
+      {/* soft glow underneath */}
+      <path d={swoosh} fill="#7c5cf5" opacity="0.5" filter="url(#swoosh-glow)" />
+      {/* the band itself */}
+      <path d={swoosh} fill="url(#swoosh-fill)" />
+      {/* bright top edge */}
+      <path
+        d="M-80 1000 C 420 800, 900 640, 1520 600"
+        fill="none"
+        stroke="url(#swoosh-edge)"
+        strokeWidth="1.5"
       />
+    </svg>
+  );
+}
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[-10rem] h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-brand/20 blur-[120px]"
-      />
+export function Hero() {
+  return (
+    <section className="relative isolate overflow-hidden bg-gradient-to-b from-black via-[#0b0716] to-[#160c33] px-5 pb-24 pt-44 sm:px-8 sm:pb-32 sm:pt-52">
+      <HeroSwoosh />
 
-      <motion.div
-        initial="hidden"
-        animate="show"
-        variants={container}
-        className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-16 pb-28 text-center sm:pt-24 sm:pb-32"
-      >
-        <motion.span
-          variants={item}
-          className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-medium text-muted"
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-          Trusted by 850+ Digital Businesses online
-        </motion.span>
+      <div className="mx-auto max-w-4xl text-center">
+        {/* Eyebrow */}
+        <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/70 sm:text-sm">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          Trusted by 850+ digital businesses
+        </div>
 
-        <motion.h1
-          variants={item}
-          className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-6xl"
-        >
-          Everything you need to scale
-          <br className="hidden sm:block" />{" "}
-          <span className="bg-gradient-to-r from-brand to-fuchsia-400 bg-clip-text text-transparent">
-            your online business.
-          </span>
-        </motion.h1>
+        <h1 className="mt-7 text-3xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Restricted assets?
+          <br />
+          <span className="text-white/50">We keep your business running.</span>
+        </h1>
 
-        <motion.p
-          variants={item}
-          className="mt-6 max-w-3xl text-balance text-lg text-muted"
-        >
-          We deliver ready-to-use e-commerce services, including Facebook ad
-          structures, email marketing, and Google services, so you can focus
-          on your brand, not your stack.
-        </motion.p>
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
+          Restricted accounts and blocked campaigns shouldn&apos;t stop your growth. AllSourced
+          runs your Meta and Google advertising backend, so you can focus on your brand
+          instead of your stack.
+        </p>
 
-        <motion.div
-          variants={item}
-          className="mt-10 flex flex-row flex-wrap justify-center gap-3"
-        >
-          <Link
-            href="https://wa.me/31647415437"
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-b from-[#a374ff] to-brand px-4 py-3 text-sm font-semibold text-brand-foreground shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_8px_20px_-4px_rgba(146,86,255,0.55)] transition-transform hover:scale-[1.02] active:scale-[0.98] sm:px-6"
+            className="inline-flex w-full items-center justify-center rounded-md bg-brand px-5 py-3 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
           >
-            <WhatsAppIcon className="h-4 w-4" />
             Chat on WhatsApp
-          </Link>
+          </a>
           <Link
             href="#services"
-            className="inline-flex items-center justify-center rounded-lg bg-white/[0.06] px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/[0.1] sm:px-6"
+            className="inline-flex w-full items-center justify-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto"
           >
-            View Services
+            View services <span aria-hidden>→</span>
           </Link>
-        </motion.div>
+        </div>
 
-        <motion.a
-          variants={item}
-          href="https://www.trustpilot.com/review/allsourced.nl"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
-        >
-          <Image
-            src="/trustpilot-stars-5.svg"
-            alt="5 stars"
-            width={96}
-            height={18}
-          />
-          <span className="inline-flex items-center gap-1">
-            <strong className="font-semibold text-foreground">4.8</strong>
-            <span>on Trustpilot &middot; 51 reviews</span>
+        {/* Rating */}
+        <div className="mt-8 flex items-center justify-center gap-2 text-sm text-white/60">
+          <span className="flex text-emerald-400">
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+            <Star />
           </span>
-        </motion.a>
-      </motion.div>
+          <span>
+            <strong className="font-semibold text-white">4.8</strong> on Trustpilot
+          </span>
+        </div>
+      </div>
+
     </section>
   );
 }
