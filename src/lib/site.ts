@@ -13,6 +13,9 @@ export const CONTACT = {
   country: "NL",
 };
 
+/** The tools suite (temp mail, SMS, 2FA): its own app on a subdomain. */
+export const TOOLS_URL = "https://tools.allsourced-agency.com";
+
 export const TRUSTPILOT_URL = "https://www.trustpilot.com/review/allsourced.nl";
 /** Shown next to the Trustpilot stars; update by hand when the score on Trustpilot changes. */
 export const TRUSTPILOT_SCORE = { score: "4.8", label: "Excellent", reviews: 51 };
@@ -48,30 +51,7 @@ export const navLinks: { label: string; href: string }[] = [
 /** Always shown in the header, unlike navLinks (which sit behind SHOW_NAV_LINKS in the Navbar). */
 export const headerLinks: { label: string; href: string }[] = [
   { label: "Services", href: "/#services" },
-  { label: "Tools", href: "/tools" },
-];
-
-export type Tool = {
-  name: string;
-  icon: "shield-key" | "user-check";
-  description: string;
-  /** Where the card links to; without one the card shows as "Coming soon". */
-  href?: string;
-};
-
-export const tools: Tool[] = [
-  {
-    name: "2FA Unlock",
-    icon: "shield-key",
-    description: "Paste your 2FA key and get the 6-digit login code instantly, without an authenticator app.",
-    href: "/tools/2fa-unlock",
-  },
-  {
-    name: "UID Checker",
-    icon: "user-check",
-    description: "Paste a list of Facebook UIDs and instantly see which accounts are live and which are dead.",
-    href: "/tools/uid-checker",
-  },
+  { label: "Tools", href: TOOLS_URL },
 ];
 
 export type Partner = {

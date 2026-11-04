@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TRUSTPILOT_URL } from "@/lib/site";
+import { TOOLS_URL, TRUSTPILOT_URL } from "@/lib/site";
 import { AvailabilityBanner } from "./AvailabilityBanner";
 import { CurrentYear } from "./CurrentYear";
 
@@ -46,7 +46,7 @@ export function Footer() {
               <ul className="mt-4 space-y-3">
                 <li>
                   <Link
-                    href="/tools"
+                    href={TOOLS_URL}
                     className="text-sm text-white/60 transition-colors hover:text-white"
                   >
                     Tools
