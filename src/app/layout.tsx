@@ -29,7 +29,15 @@ export const metadata: Metadata = {
   openGraph: { ...sharedOpenGraph, url: "/", title: DEFAULT_TITLE, description: SITE_DESCRIPTION },
   twitter: { ...sharedTwitter, title: DEFAULT_TITLE, description: SITE_DESCRIPTION },
   robots: { index: true, follow: true, googleBot: { "max-image-preview": "large", "max-snippet": -1 } },
-  icons: { apple: "/apple-touch-icon.png" },
+  // favicon.ico itself is picked up from src/app; these add the sharper SVG/PNG versions.
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
@@ -45,7 +53,7 @@ const organizationJsonLd = {
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       url: SITE_URL,
-      logo: `${SITE_URL}/apple-touch-icon.png`,
+      logo: `${SITE_URL}/web-app-manifest-512x512.png`,
       description: SITE_DESCRIPTION,
       telephone: CONTACT.phone,
       address: {
