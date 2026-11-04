@@ -7,7 +7,7 @@ const TOOLS_ORIGIN = process.env.TOOLS_ORIGIN ?? "https://allcodes-eight.vercel.
 const nextConfig: NextConfig = {
   // The tools suite (temp mail, SMS, 2FA, wallet) is its own Next.js app ("AllCodes", basePath
   // /tools) that this site serves under /tools (multi-zones). Rewrites run after this site's own
-  // routes, so pages that still live here (e.g. /tools/uid-checker) keep winning.
+  // routes, so a page added here under /tools would take precedence over the tools app.
   async redirects() {
     return [{ source: "/tools/2fa-unlock", destination: "/tools/2fa", permanent: true }];
   },
