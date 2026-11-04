@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { Navbar } from "@/components/Navbar";
+import { getSiteBanner } from "@/lib/banner";
 import { VisitTracker } from "@/components/VisitTracker";
 import { sharedOpenGraph, sharedTwitter } from "@/lib/seo";
 import { CONTACT, SITE_DESCRIPTION, SITE_NAME, SITE_URL, TRUSTPILOT_URL } from "@/lib/site";
@@ -76,7 +77,9 @@ const organizationJsonLd = {
   ],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const banner = await getSiteBanner();
+
   return (
     <html
       lang="en"
@@ -84,7 +87,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col font-sans">
         <JsonLd data={organizationJsonLd} />
-        <Navbar />
+        <Navbar banner={banner} />
         {children}
         <Footer />
         <Suspense>

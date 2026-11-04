@@ -46,7 +46,7 @@ const reasons = [
 
 export function WhyUs() {
   return (
-    <section data-section="why-us" className="bg-gradient-to-b from-black to-[#0b0716] px-5 pb-16 pt-8 sm:px-8 sm:pb-20">
+    <section data-section="why-us" className="bg-gradient-to-b from-black to-[#0b0716] px-5 py-14 sm:px-8 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
           Why choose us

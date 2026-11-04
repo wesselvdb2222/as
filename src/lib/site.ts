@@ -14,6 +14,8 @@ export const CONTACT = {
 };
 
 export const TRUSTPILOT_URL = "https://www.trustpilot.com/review/allsourced.nl";
+/** Shown next to the Trustpilot stars; update by hand when the score on Trustpilot changes. */
+export const TRUSTPILOT_SCORE = { score: "4.8", label: "Excellent", reviews: 51 };
 
 export const WHATSAPP_URL = "https://wa.me/31647415437";
 

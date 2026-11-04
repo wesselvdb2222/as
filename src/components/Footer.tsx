@@ -26,8 +26,13 @@ export function Footer() {
                   height={961}
                   className="h-7 w-auto"
                 />
-                <span className="text-lg font-semibold tracking-tight text-white">
-                  AllSourced
+                <span className="leading-tight">
+                  <span className="block text-lg font-semibold tracking-tight text-white">
+                    AllSourced
+                  </span>
+                  <span className="block text-[11px] font-medium uppercase tracking-[0.2em] text-white/50">
+                    Agency
+                  </span>
                 </span>
               </Link>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">

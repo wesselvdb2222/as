@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import type { SiteBannerData } from "@/lib/banner-format";
 import { headerLinks, navLinks, services, WHATSAPP_URL } from "@/lib/site";
+import { SiteBanner } from "./SiteBanner";
 import { ServiceIcon } from "./ServiceIcon";
 
 function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -45,7 +47,7 @@ function HeaderLinks() {
   ));
 }
 
-export function Navbar() {
+export function Navbar({ banner }: { banner: SiteBannerData | null }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -113,23 +115,7 @@ export function Navbar() {
         scrolled || mobileOpen ? "border-white/10" : "border-transparent"
       }`}
     >
-      {/* Scam warning */}
-      <div role="alert" className="bg-red-600 text-white">
-        <p className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-5 py-2 text-center text-xs font-medium sm:px-8 sm:text-sm">
-          <svg viewBox="0 0 20 20" fill="currentColor" className="hidden h-4 w-4 shrink-0 sm:block" aria-hidden>
-            <path
-              fillRule="evenodd"
-              d="M8.5 3.3a1.7 1.7 0 0 1 3 0l6 10.6A1.7 1.7 0 0 1 16 16.5H4a1.7 1.7 0 0 1-1.5-2.6l6-10.6ZM10 7a.8.8 0 0 0-.8.8v3.4a.8.8 0 0 0 1.6 0V7.8A.8.8 0 0 0 10 7Zm0 7.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
-              clipRule="evenodd"
-            />
-          </svg>
-          <span>
-            <strong className="font-semibold">Warning:</strong> a fake website is circulating at{" "}
-            <span className="font-semibold underline">allsourced.nl</span>. It is not affiliated
-            with us. We are actively working on getting it taken down.
-          </span>
-        </p>
-      </div>
+      {banner && <SiteBanner banner={banner} />}
 
       <nav
         aria-label="Main"
@@ -145,8 +131,13 @@ export function Navbar() {
             priority
             className="h-7 w-auto sm:h-8"
           />
-          <span className="text-lg font-semibold tracking-tight text-white sm:text-xl">
-            AllSourced
+          <span className="leading-tight">
+            <span className="block text-lg font-semibold tracking-tight text-white sm:text-xl">
+              AllSourced
+            </span>
+            <span className="block text-[11px] font-medium uppercase tracking-[0.2em] text-white/50">
+              Agency
+            </span>
           </span>
         </Link>
 

@@ -1,13 +1,6 @@
 import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/site";
-
-function Star() {
-  return (
-    <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden>
-      <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5Z" />
-    </svg>
-  );
-}
+import { TrustpilotRating } from "./TrustpilotRating";
 
 /** Large purple swoosh echoing the curve in the AllSourced logo. */
 function HeroSwoosh() {
@@ -53,7 +46,7 @@ function HeroSwoosh() {
 
 export function Hero() {
   return (
-    <section data-section="hero" className="relative isolate overflow-hidden bg-gradient-to-b from-black via-[#0b0716] to-[#160c33] px-5 pb-24 pt-44 sm:px-8 sm:pb-32 sm:pt-52">
+    <section data-section="hero" className="relative isolate overflow-hidden bg-gradient-to-b from-black via-[#0b0716] to-[#160c33] px-5 pb-16 pt-44 sm:px-8 sm:pb-20 sm:pt-52">
       <HeroSwoosh />
 
       <div className="mx-auto max-w-4xl text-center">
@@ -93,17 +86,8 @@ export function Hero() {
         </div>
 
         {/* Rating */}
-        <div className="mt-8 flex items-center justify-center gap-2 text-sm text-white/60">
-          <span className="flex text-emerald-400">
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-          </span>
-          <span>
-            <strong className="font-semibold text-white">4.8</strong> on Trustpilot
-          </span>
+        <div className="mt-8 flex justify-center">
+          <TrustpilotRating />
         </div>
       </div>
 
