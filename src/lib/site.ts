@@ -13,8 +13,10 @@ export const CONTACT = {
   country: "NL",
 };
 
-/** The tools suite (temp mail, SMS, 2FA): its own app on a subdomain. */
-export const TOOLS_URL = "https://tools.allsourced-agency.com";
+/** The tools suite (temp mail, SMS, 2FA): a separate app served under this path (see
+ * next.config.ts). Link to it with a plain <a>, not next/link: it's another zone, so it needs a
+ * full page load. */
+export const TOOLS_URL = "/tools";
 
 export const TRUSTPILOT_URL = "https://www.trustpilot.com/review/allsourced.nl";
 /** Shown next to the Trustpilot stars; update by hand when the score on Trustpilot changes. */

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { SiteBannerData } from "@/lib/banner-format";
-import { headerLinks, navLinks, services, WHATSAPP_URL } from "@/lib/site";
+import { headerLinks, navLinks, services, TOOLS_URL, WHATSAPP_URL } from "@/lib/site";
 import { SiteBanner } from "./SiteBanner";
 import { ServiceIcon } from "./ServiceIcon";
 
@@ -36,15 +36,19 @@ function Chevron({ open }: { open: boolean }) {
 const SHOW_NAV_LINKS = false;
 
 function HeaderLinks() {
-  return headerLinks.map((l) => (
-    <Link
-      key={l.href}
-      href={l.href}
-      className="rounded-md px-2 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white sm:px-3"
-    >
-      {l.label}
-    </Link>
-  ));
+  const className = "rounded-md px-2 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white sm:px-3";
+  return headerLinks.map((l) =>
+    // /tools is served by the tools app (another zone): a plain link so the browser loads it fully.
+    l.href.startsWith(TOOLS_URL) ? (
+      <a key={l.href} href={l.href} className={className}>
+        {l.label}
+      </a>
+    ) : (
+      <Link key={l.href} href={l.href} className={className}>
+        {l.label}
+      </Link>
+    )
+  );
 }
 
 export function Navbar({ banner }: { banner: SiteBannerData | null }) {

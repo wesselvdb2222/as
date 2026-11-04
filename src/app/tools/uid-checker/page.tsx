@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbs, pageMetadata, webApplication } from "@/lib/seo";
 import { UidChecker } from "./UidChecker";
@@ -23,9 +22,9 @@ export default function UidCheckerPage() {
       />
       <section className="px-5 pb-28 pt-44 sm:px-8 sm:pt-52">
         <div className="mx-auto max-w-4xl">
-          <Link href="/tools" className="text-sm text-white/50 transition-colors hover:text-white">
+          <a href="/tools" className="text-sm text-white/50 transition-colors hover:text-white">
             <span aria-hidden>←</span> All tools
-          </Link>
+          </a>
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-5xl">UID Checker</h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
             Paste a list of Facebook UIDs and see which accounts are still live and which are deleted, disabled

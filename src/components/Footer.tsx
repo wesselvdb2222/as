@@ -45,12 +45,12 @@ export function Footer() {
               <h3 className="text-sm font-semibold text-white">Company</h3>
               <ul className="mt-4 space-y-3">
                 <li>
-                  <Link
+                  <a
                     href={TOOLS_URL}
                     className="text-sm text-white/60 transition-colors hover:text-white"
                   >
                     Tools
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <Link
