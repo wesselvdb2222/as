@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/seo";
 import { partners, WHATSAPP_URL } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Partners | AllSourced",
+// noindex while the partner list is still placeholder content; drop it once real partners are in.
+export const metadata: Metadata = pageMetadata({
+  title: "Partners",
   description: "The platforms and companies AllSourced works with to keep your business running.",
-};
+  path: "/partners",
+  noindex: true,
+});
 
 export default function PartnersPage() {
   return (

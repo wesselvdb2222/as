@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms of Service | AllSourced",
-  description: "The terms and conditions that apply when you order services from AllSourced.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Terms of Service",
+  description: "The terms and conditions that apply when you order services from AllSourced, Keizersgracht 520 H, Amsterdam.",
+  path: "/terms-of-service",
+});
 
 export default function TermsOfServicePage() {
   return (

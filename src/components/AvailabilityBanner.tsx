@@ -2,7 +2,7 @@ import { WHATSAPP_URL } from "@/lib/site";
 
 export function AvailabilityBanner() {
   return (
-    <div className="bg-black px-5 pb-12 pt-4 sm:px-8">
+    <div className="bg-[#0b0716] px-5 pb-12 pt-4 sm:px-8">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-xl border border-brand/30 bg-gradient-to-r from-brand/25 via-brand/10 to-transparent">
         {/* soft light from the left */}
         <div

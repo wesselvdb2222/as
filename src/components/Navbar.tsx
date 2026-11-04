@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { navLinks, services, WHATSAPP_URL } from "@/lib/site";
+import { headerLinks, navLinks, services, WHATSAPP_URL } from "@/lib/site";
 import { ServiceIcon } from "./ServiceIcon";
 
 function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -32,6 +32,18 @@ function Chevron({ open }: { open: boolean }) {
 
 // Temporarily hidden: set to true to show Services + Partners again.
 const SHOW_NAV_LINKS = false;
+
+function HeaderLinks() {
+  return headerLinks.map((l) => (
+    <Link
+      key={l.href}
+      href={l.href}
+      className="rounded-md px-2 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white sm:px-3"
+    >
+      {l.label}
+    </Link>
+  ));
+}
 
 export function Navbar() {
   const pathname = usePathname();
@@ -121,7 +133,7 @@ export function Navbar() {
 
       <nav
         aria-label="Main"
-        className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 sm:px-8"
+        className="relative mx-auto flex h-18 max-w-7xl items-center justify-between px-5 sm:px-8"
       >
         {/* Logo */}
         <Link href="/" aria-label="AllSourced home" className="flex shrink-0 items-center gap-2.5">
@@ -137,6 +149,13 @@ export function Navbar() {
             AllSourced
           </span>
         </Link>
+
+        {/* Always-visible links, centered in the bar on desktop */}
+        {!SHOW_NAV_LINKS && (
+          <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-2 md:flex">
+            <HeaderLinks />
+          </div>
+        )}
 
         {/* Desktop links */}
         {SHOW_NAV_LINKS && (
@@ -204,15 +223,21 @@ export function Navbar() {
         )}
 
         {/* Desktop CTA */}
-        <div className={SHOW_NAV_LINKS ? "hidden md:block" : "block"}>
+        <div className={SHOW_NAV_LINKS ? "hidden md:block" : "flex items-center gap-1 sm:gap-2"}>
+          {!SHOW_NAV_LINKS && (
+            <div className="flex items-center md:hidden">
+              <HeaderLinks />
+            </div>
+          )}
           <a
             href={WHATSAPP_URL}
+            aria-label="Contact us"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-md bg-brand px-3.5 py-2 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
           >
             <WhatsAppIcon />
-            Contact us
+            <span className={SHOW_NAV_LINKS ? undefined : "hidden sm:inline"}>Contact us</span>
           </a>
         </div>
 

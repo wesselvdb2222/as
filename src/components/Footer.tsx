@@ -1,17 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { WHATSAPP_URL } from "@/lib/site";
+import { TRUSTPILOT_URL } from "@/lib/site";
 import { AvailabilityBanner } from "./AvailabilityBanner";
 import { CurrentYear } from "./CurrentYear";
-
-const TRUSTPILOT_URL = "https://www.trustpilot.com/review/allsourced.nl";
 
 export function Footer() {
   return (
     <>
       <AvailabilityBanner />
 
-      <footer id="contact" className="border-t border-white/10 bg-black">
+      <footer id="contact" className="border-t border-white/10 bg-[#0b0716]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
           <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr]">
             {/* Brand */}
@@ -35,20 +33,20 @@ export function Footer() {
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
                 We handle your backend, so you can focus on your brand.
               </p>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center rounded-md bg-brand px-3.5 py-2 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-brand-light"
-              >
-                Chat on WhatsApp
-              </a>
             </div>
 
             {/* Company */}
             <div>
               <h3 className="text-sm font-semibold text-white">Company</h3>
               <ul className="mt-4 space-y-3">
+                <li>
+                  <Link
+                    href="/tools"
+                    className="text-sm text-white/60 transition-colors hover:text-white"
+                  >
+                    Tools
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/partners"
