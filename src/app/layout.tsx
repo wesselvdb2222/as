@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import { VisitTracker } from "@/components/VisitTracker";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,6 +33,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         {children}
         <Footer />
+        <Suspense>
+          <VisitTracker />
+        </Suspense>
       </body>
     </html>
   );

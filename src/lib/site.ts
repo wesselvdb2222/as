@@ -53,3 +53,6 @@ export const partners: Partner[] = [
     description: "Short description of what this partner does and how you work together.",
   },
 ];
+
+/** Page-view beacon endpoint in the Phase CRM; visits show up under AllSourced → Analytics there. */
+export const TRACKING_URL = "https://www.phase-hq.com/api/track";
