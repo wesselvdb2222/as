@@ -53,7 +53,7 @@ function HeroSwoosh() {
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-b from-black via-[#0b0716] to-[#160c33] px-5 pb-24 pt-44 sm:px-8 sm:pb-32 sm:pt-52">
+    <section data-section="hero" className="relative isolate overflow-hidden bg-gradient-to-b from-black via-[#0b0716] to-[#160c33] px-5 pb-24 pt-44 sm:px-8 sm:pb-32 sm:pt-52">
       <HeroSwoosh />
 
       <div className="mx-auto max-w-4xl text-center">
