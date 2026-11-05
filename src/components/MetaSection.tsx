@@ -208,7 +208,7 @@ export function MetaSection() {
                   {/* Indicative price, top-right */}
                   {p.price && (
                     <span
-                      className={`rounded-full border px-2.5 py-1 text-xs font-medium ${
+                      className={`rounded-md border px-2.5 py-1 text-xs font-medium ${
                         p.featured ? "border-brand/50 bg-brand/20 text-white" : "border-white/10 bg-white/5 text-white/80"
                       }`}
                     >
