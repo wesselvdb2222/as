@@ -75,7 +75,6 @@ export type Partner = {
   placeholder?: boolean;
 };
 
-// TODO: replace the examples with real partners (remove `placeholder` from each).
 export const partners: Partner[] = [
   {
     name: "Shopify",
@@ -88,8 +87,6 @@ export const partners: Partner[] = [
     featured: true,
     perk: "Exclusive deal: get Shopify for $1 per month",
   },
-  { name: "Partner name", category: "Payments", description: "Short description of what this partner does and how you work together.", featured: true, placeholder: true },
-  { name: "Partner name", category: "E-commerce", description: "Short description of what this partner does and how you work together.", placeholder: true },
 ];
 
 /** Page-view beacon endpoint in the Phase CRM; visits show up under AllSourced → Analytics there. */
