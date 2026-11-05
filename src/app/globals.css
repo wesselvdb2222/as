@@ -25,3 +25,25 @@ body {
     display: none;
   }
 }
+
+/* Hero sky: twinkling stars and the occasional shooting star (components/HeroStars.tsx). */
+@keyframes twinkle {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(0.6); filter: brightness(0.4); }
+}
+.hero-star {
+  animation: twinkle ease-in-out infinite;
+}
+@keyframes shooting-star {
+  0% { transform: rotate(-35deg) translateX(0); opacity: 0; }
+  2% { opacity: 1; }
+  10% { transform: rotate(-35deg) translateX(-420px); opacity: 0; }
+  100% { transform: rotate(-35deg) translateX(-420px); opacity: 0; }
+}
+.shooting-star {
+  opacity: 0;
+  animation: shooting-star 18s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-star, .shooting-star { animation: none; }
+}
