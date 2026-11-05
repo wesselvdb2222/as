@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { SiteBannerData } from "@/lib/banner-format";
 import { headerLinks, navLinks, services, TOOLS_URL, WHATSAPP_URL } from "@/lib/site";
+import { CurrencySwitcher } from "./CurrencySwitcher";
 import { SiteBanner } from "./SiteBanner";
 import { ServiceIcon } from "./ServiceIcon";
 
@@ -224,6 +225,9 @@ export function Navbar({ banner }: { banner: SiteBannerData | null }) {
               <HeaderLinks />
             </div>
           )}
+          <div className="hidden sm:block">
+            <CurrencySwitcher />
+          </div>
           <a
             href={WHATSAPP_URL}
             aria-label="Contact us"

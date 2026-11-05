@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { WHATSAPP_URL } from "@/lib/site";
+import { formatPrice } from "@/lib/currency";
+import { useCurrency } from "./CurrencyProvider";
 import { ServiceIcon } from "./ServiceIcon";
 import { ArrowButton } from "./ArrowButton";
 
@@ -21,13 +23,16 @@ type MetaProduct = {
   description: string;
   icon: React.ReactNode;
   featured?: boolean;
-  price?: { from: string; unit: string };
+  /** Indicative price in EUR (converted to the visitor's currency), shown as a badge top-right;
+   * `text` instead for prices that aren't an amount, e.g. "4% fee". */
+  price?: { eur?: number; text?: string; unit?: string; prefix?: string };
   features?: string[];
 };
 
 const products: MetaProduct[] = [
   {
     title: "Agency Ad Accounts",
+    price: { text: "4% fee" },
     description: "Stable, scalable spend. A single restriction never stops your campaigns.",
     featured: true,
     features: ["Different types available", "Live within 24 hours", "24/7 top-ups"],
@@ -40,6 +45,7 @@ const products: MetaProduct[] = [
   },
   {
     title: "Facebook Structures",
+    price: { eur: 375 },
     description: "Complete setups with profiles, Business Manager, pages and ad accounts connected.",
     icon: (
       <svg {...iconProps}>
@@ -52,6 +58,7 @@ const products: MetaProduct[] = [
   },
   {
     title: "Facebook Profiles",
+    price: { eur: 59 },
     description: "Established profiles to securely manage and run your advertising assets.",
     icon: (
       <svg {...iconProps}>
@@ -62,6 +69,7 @@ const products: MetaProduct[] = [
   },
   {
     title: "Facebook Pages",
+    price: { eur: 50, unit: "/ page" },
     description: "Pages ready to advertise from, so you can launch campaigns right away.",
     icon: (
       <svg {...iconProps}>
@@ -71,6 +79,7 @@ const products: MetaProduct[] = [
   },
   {
     title: "Business Managers",
+    price: { eur: 125, prefix: "Aged from" },
     description: "Organise your ad accounts, pages and pixels in one place.",
     icon: (
       <svg {...iconProps}>
@@ -99,6 +108,7 @@ function Check() {
 }
 
 export function MetaSection() {
+  const { currency } = useCurrency();
   const trackRef = useRef<HTMLUListElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
@@ -177,6 +187,24 @@ export function MetaSection() {
                   >
                     {p.icon}
                   </span>
+                  {/* Indicative price, top-right */}
+                  {p.price && (
+                    <span
+                      className={`rounded-full border px-2.5 py-1 text-xs font-medium ${
+                        p.featured ? "border-brand/50 bg-brand/20 text-white" : "border-white/10 bg-white/5 text-white/80"
+                      }`}
+                    >
+                      {p.price.text ? (
+                        <span className="font-semibold text-white">{p.price.text}</span>
+                      ) : (
+                        <>
+                          {p.price.prefix ?? "From"}{" "}
+                          <span className="font-semibold text-white">{formatPrice(p.price.eur ?? 0, currency)}</span>
+                        </>
+                      )}
+                      {p.price.unit && <span className="text-white/50"> {p.price.unit}</span>}
+                    </span>
+                  )}
                 </div>
 
                 <h3 className="mt-4 text-base font-semibold text-white">{p.title}</h3>
@@ -194,15 +222,6 @@ export function MetaSection() {
                 )}
 
                 <div className="mt-auto pt-5">
-                  {p.price && (
-                    <p className="mb-4 flex items-baseline gap-1.5">
-                      <span className="text-xs text-white/50">From</span>
-                      <span className="text-2xl font-semibold tracking-tight text-white">
-                        {p.price.from}
-                      </span>
-                      <span className="text-xs text-white/50">{p.price.unit}</span>
-                    </p>
-                  )}
                   {p.featured ? (
                     <span className="flex w-full items-center justify-center rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors group-hover:bg-brand-light">
                       Get started
