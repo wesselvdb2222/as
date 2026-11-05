@@ -22,7 +22,7 @@ const reasons = [
     ),
   },
   {
-    title: "Sharp prices",
+    title: "Competitive Rates",
     description: "Competitive pricing without compromising on quality or stability.",
     icon: (
       <svg {...iconProps}>
