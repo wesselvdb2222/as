@@ -242,7 +242,7 @@ export function MetaSection() {
 
         {/* Legal disclaimer + "Ask us": centred in the gap between the services and Why us (same
             space above as the next section has on top) */}
-        <p className="mt-8 flex items-start gap-2 text-xs leading-relaxed text-white/45 sm:mt-10">
+        <p className="mt-3 flex items-start gap-2 text-xs leading-relaxed text-white/45 sm:mt-4">
           <svg
             viewBox="0 0 24 24"
             fill="none"
