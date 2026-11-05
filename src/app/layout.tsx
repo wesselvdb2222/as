@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ChatWidget } from "@/components/ChatWidget";
@@ -99,6 +100,8 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           </Suspense>
         </CurrencyProvider>
       </body>
+      {/* Google Analytics 4 (gtag.js), loaded after hydration so it doesn't slow the page. */}
+      <GoogleAnalytics gaId="G-0C1YHBXRZQ" />
     </html>
   );
 }
