@@ -142,13 +142,15 @@ export function Footer() {
 
           {/* Bottom bar */}
           <div className="mt-16 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-center text-xs text-white/40">
-            <p>
-              © <CurrentYear /> AllSourced. All rights reserved.
-            </p>
-            <p className="max-w-xl rounded-md border border-white/15 bg-black px-3 py-2 text-white/70">
-              We are not affiliated with any social media platform or Meta Platforms, Inc. Meta, Facebook and Instagram
-              are trademarks of Meta Platforms, Inc.
-            </p>
+            <div className="max-w-xl rounded-md border border-white/15 bg-black px-3 py-2 text-white/70">
+              <p className="font-medium text-white/80">
+                © <CurrentYear /> AllSourced. All rights reserved.
+              </p>
+              <p className="mt-1">
+                We are not affiliated with any social media platform or Meta Platforms, Inc. Meta, Facebook and
+                Instagram are trademarks of Meta Platforms, Inc.
+              </p>
+            </div>
           </div>
         </div>
       </footer>
