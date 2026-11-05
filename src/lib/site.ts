@@ -87,6 +87,15 @@ export const partners: Partner[] = [
     featured: true,
     perk: "Exclusive deal: get Shopify for $1 per month",
   },
+  {
+    name: "WeTracked",
+    category: "Tracking",
+    description: "Ad tracking for Shopify and WooCommerce: send every purchase back to Meta and Google, so your campaigns optimise on real sales.",
+    // TODO: swap for the AllSourced affiliate link (and set affiliate: true) once we have it.
+    url: "https://www.wetracked.io",
+    featured: true,
+    perk: "Get 10% off for 3 months",
+  },
 ];
 
 /** Page-view beacon endpoint in the Phase CRM; visits show up under AllSourced → Analytics there. */
