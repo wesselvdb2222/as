@@ -6,16 +6,16 @@ const WHATSAPP_PATH =
 /** Availability call-out above the footer: a bold block with a live status and the WhatsApp CTA. */
 export function AvailabilityBanner() {
   return (
-    <div className="bg-[#0b0716] px-5 pb-14 pt-6 sm:px-8">
+    <div className="bg-[#0b0716] px-5 pb-12 pt-4 sm:px-8">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-brand/40 bg-gradient-to-r from-brand/35 via-brand/15 to-[#0b0716] shadow-2xl shadow-brand/10">
         {/* light from the left and a faint one top-right */}
         <div aria-hidden className="pointer-events-none absolute -left-24 top-1/2 h-64 w-96 -translate-y-1/2 rounded-full bg-brand/40 blur-3xl" />
         <div aria-hidden className="pointer-events-none absolute -right-20 -top-24 h-56 w-56 rounded-full bg-brand-light/15 blur-3xl" />
 
-        <div className="relative flex flex-col gap-7 px-6 py-8 sm:px-10 sm:py-10 md:flex-row md:items-center md:justify-between">
+        <div className="relative flex flex-col gap-5 px-6 py-6 sm:px-8 sm:py-7 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-5">
-            <span className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-[#25D366] shadow-lg shadow-black/30">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7" aria-hidden>
+            <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-[#25D366] shadow-lg shadow-black/30">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6" aria-hidden>
                 <path d={WHATSAPP_PATH} />
               </svg>
               <span className="absolute -right-1 -top-1 flex h-3.5 w-3.5">
@@ -24,8 +24,8 @@ export function AvailabilityBanner() {
               </span>
             </span>
             <div>
-              <p className="text-xl font-semibold tracking-tight text-white sm:text-2xl">We are available 7 days a week.</p>
-              <p className="mt-1 text-sm text-white/65 sm:text-base">Questions about your accounts or a new setup? Message us on WhatsApp.</p>
+              <p className="text-lg font-semibold tracking-tight text-white sm:text-xl">We are available 7 days a week.</p>
+              <p className="mt-0.5 text-sm text-white/65">Questions about your accounts or a new setup? Message us on WhatsApp.</p>
             </div>
           </div>
 
@@ -33,9 +33,9 @@ export function AvailabilityBanner() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-black shadow-lg shadow-black/30 transition-colors hover:bg-white/90"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-black shadow-lg shadow-black/30 transition-colors hover:bg-white/90"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-[#25D366]" aria-hidden>
+            <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 text-[#25D366]" aria-hidden>
               <path d={WHATSAPP_PATH} />
             </svg>
             Chat on WhatsApp
