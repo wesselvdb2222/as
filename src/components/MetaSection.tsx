@@ -240,17 +240,8 @@ export function MetaSection() {
           ))}
         </ul>
 
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-light transition-colors hover:text-white"
-        >
-          Not sure what you need? Ask us <span aria-hidden>→</span>
-        </a>
-
-        {/* Legal disclaimer */}
-        <div className="mt-10 flex items-start gap-3 rounded-lg border border-white/10 bg-white/[0.03] p-4 sm:p-5">
+        {/* Legal disclaimer: small, between the services and the "Ask us" link */}
+        <p className="mt-8 flex items-start gap-2 text-xs leading-relaxed text-white/45">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -258,18 +249,26 @@ export function MetaSection() {
             strokeWidth={1.6}
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="mt-0.5 h-5 w-5 shrink-0 text-brand-light"
+            className="mt-px h-3.5 w-3.5 shrink-0 text-white/40"
             aria-hidden
           >
             <path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z" />
             <path d="m9 12 2 2 4-4" />
           </svg>
-          <p className="text-sm leading-relaxed text-white/60">
-            <strong className="font-semibold text-white">Legal disclaimer:</strong> We do not sell
-            hacked or stolen accounts. We only sell aged accounts that we have created ourselves,
-            which also ensures their stability.
-          </p>
-        </div>
+          <span>
+            <span className="font-semibold text-white/60">Legal disclaimer:</span> We do not sell hacked or stolen accounts. We
+            only sell aged accounts that we have created ourselves, which also ensures their stability.
+          </span>
+        </p>
+
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-light transition-colors hover:text-white"
+        >
+          Not sure what you need? Ask us <span aria-hidden>→</span>
+        </a>
       </div>
     </section>
   );
