@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { WHATSAPP_URL } from "@/lib/site";
 import { formatPrice } from "@/lib/currency";
 import { useCurrency } from "./CurrencyProvider";
-import { ServiceIcon } from "./ServiceIcon";
 import { ArrowButton } from "./ArrowButton";
 
 const iconProps = {
