@@ -42,6 +42,15 @@ export function Footer() {
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
                 We handle your backend, so you can focus on optimizing your marketing.
               </p>
+              {/* AllSourced is a Meta Business Partner. TODO: link the badge to our listing in Meta's
+                  partner directory (facebook.com/business/marketing-partners) once we have the URL. */}
+              <Image
+                src="/partners/badge-dark.png"
+                alt="Meta Business Partner"
+                width={774}
+                height={444}
+                className="mt-6 h-16 w-auto"
+              />
             </div>
 
             {/* Company */}
@@ -114,8 +123,7 @@ export function Footer() {
               © <CurrentYear /> AllSourced. All rights reserved.
             </p>
             <p className="max-w-xl md:text-right">
-              This site is not affiliated with or endorsed by Meta Platforms,
-              Inc. or any other platform.
+              Meta, Facebook and Instagram are trademarks of Meta Platforms, Inc.
             </p>
           </div>
         </div>
