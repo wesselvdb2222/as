@@ -21,9 +21,10 @@ export function HomeReviews() {
             </span>
           </a>
         </div>
-        <ul className="mt-8 grid gap-4 md:grid-cols-3">
+        {/* Mobile: swipeable slider (scroll-snap, peeking next card). md+: three columns. */}
+        <ul className="-mx-5 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:-mx-8 sm:scroll-px-8 sm:px-8 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden">
           {REVIEWS.map((review) => (
-            <li key={review.name} className="flex flex-col rounded-xl border border-white/10 bg-white/[0.03] p-6">
+            <li key={review.name} className="flex w-[85%] shrink-0 snap-start flex-col rounded-xl md:w-auto border border-white/10 bg-white/[0.03] p-6">
               <TrustpilotStars size="sm" />
               <p className="mt-4 font-semibold text-white">{review.title}</p>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-white/60">{review.text}</p>
