@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AffiliateSection } from "@/components/AffiliateSection";
 import { Hero } from "@/components/Hero";
 import { HomeFaq } from "@/components/HomeFaq";
 import { HomeReviews } from "@/components/HomeReviews";
@@ -20,6 +21,7 @@ export default function Home() {
       <WhyUs />
       <SeoContent />
       <HomeReviews />
+      <AffiliateSection />
       <HomeFaq />
     </main>
   );
