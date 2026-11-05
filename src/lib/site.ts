@@ -58,30 +58,25 @@ export const headerLinks: { label: string; href: string }[] = [
 
 export type Partner = {
   name: string;
+  /** Groups partners on the page, e.g. "Advertising", "Payments". */
   category: string;
   description: string;
   url?: string;
   /** Path to a logo in /public, e.g. "/partners/acme.svg" */
   logo?: string;
+  /** Shown large at the top of the page. */
+  featured?: boolean;
+  /** A benefit for AllSourced clients, e.g. "10% off with code ALLSOURCED". */
+  perk?: string;
+  /** Example entry: while any of these remain, the page stays out of search engines. */
+  placeholder?: boolean;
 };
 
-// TODO: replace with real partners
+// TODO: replace the examples with real partners (remove `placeholder` from each).
 export const partners: Partner[] = [
-  {
-    name: "Partner name",
-    category: "Advertising",
-    description: "Short description of what this partner does and how you work together.",
-  },
-  {
-    name: "Partner name",
-    category: "Payments",
-    description: "Short description of what this partner does and how you work together.",
-  },
-  {
-    name: "Partner name",
-    category: "E-commerce",
-    description: "Short description of what this partner does and how you work together.",
-  },
+  { name: "Partner name", category: "Advertising", description: "Short description of what this partner does and how you work together.", featured: true, perk: "Exclusive benefit for AllSourced clients", placeholder: true },
+  { name: "Partner name", category: "Payments", description: "Short description of what this partner does and how you work together.", featured: true, placeholder: true },
+  { name: "Partner name", category: "E-commerce", description: "Short description of what this partner does and how you work together.", placeholder: true },
 ];
 
 /** Page-view beacon endpoint in the Phase CRM; visits show up under AllSourced → Analytics there. */
