@@ -241,7 +241,7 @@ export function MetaSection() {
         </ul>
 
         {/* Legal disclaimer: small, between the services and the "Ask us" link */}
-        <p className="mt-8 flex items-start gap-2 text-xs leading-relaxed text-white/45">
+        <p className="mx-auto mt-8 flex max-w-2xl items-start justify-center gap-2 text-center text-xs leading-relaxed text-white/45">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -261,14 +261,16 @@ export function MetaSection() {
           </span>
         </p>
 
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-light transition-colors hover:text-white"
-        >
-          Not sure what you need? Ask us <span aria-hidden>→</span>
-        </a>
+        <div className="mt-4 text-center">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-light transition-colors hover:text-white"
+          >
+            Not sure what you need? Ask us <span aria-hidden>→</span>
+          </a>
+        </div>
       </div>
     </section>
   );
