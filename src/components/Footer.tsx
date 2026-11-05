@@ -40,7 +40,7 @@ export function Footer() {
                 </span>
               </Link>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-                We handle your backend, so you can focus on your brand.
+                We handle your backend, so you can focus on optimizing your marketing.
               </p>
             </div>
 
