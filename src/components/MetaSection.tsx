@@ -136,7 +136,7 @@ export function MetaSection() {
   return (
     <section
       id="services"
-      className="bg-gradient-to-b from-[#160c33] via-[#0b0716] to-black px-5 py-14 sm:px-8 sm:py-16"
+      className="bg-gradient-to-b from-[#160c33] via-[#0b0716] to-black px-5 pb-2 pt-14 sm:px-8 sm:pt-16"
     >
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
@@ -240,8 +240,9 @@ export function MetaSection() {
           ))}
         </ul>
 
-        {/* Legal disclaimer: small, between the services and the "Ask us" link */}
-        <p className="mx-auto mt-8 flex max-w-2xl items-start justify-center gap-2 text-center text-xs leading-relaxed text-white/45">
+        {/* Legal disclaimer + "Ask us": centred in the gap between the services and Why us (same
+            space above as the next section has on top) */}
+        <p className="mx-auto mt-14 flex max-w-2xl sm:mt-16 items-start justify-center gap-2 text-center text-xs leading-relaxed text-white/45">
           <svg
             viewBox="0 0 24 24"
             fill="none"
