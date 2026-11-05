@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TOOLS_URL, TRUSTPILOT_URL } from "@/lib/site";
-import { TrustpilotBadge } from "./TrustpilotRating";
 import { AvailabilityBanner } from "./AvailabilityBanner";
 import { HiddenOn } from "./HiddenOn";
 import { CurrentYear } from "./CurrentYear";
@@ -53,7 +52,9 @@ export function Footer() {
                   height={444}
                   className="h-16 w-auto"
                 />
-                <TrustpilotBadge />
+                <a href={TRUSTPILOT_URL} target="_blank" rel="noopener noreferrer" aria-label="Rated Excellent on Trustpilot">
+                  <Image src="/partners/trustpilot-excellent.png" alt="Trustpilot: Excellent" width={298} height={356} className="h-16 w-auto" />
+                </a>
               </div>
             </div>
 
