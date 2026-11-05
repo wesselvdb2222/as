@@ -91,8 +91,9 @@ export const partners: Partner[] = [
     name: "WeTracked",
     category: "Tracking",
     description: "Ad tracking for Shopify and WooCommerce: send every purchase back to Meta and Google, so your campaigns optimise on real sales.",
-    // TODO: swap for the AllSourced affiliate link (and set affiliate: true) once we have it.
-    url: "https://www.wetracked.io",
+    // AllSourced referral link: unlocks the 10% discount.
+    url: "https://www.wetracked.io/?ref=0d54dd79-df6a-4080-9765-06b626f24c83",
+    affiliate: true,
     featured: true,
     perk: "Get 10% off for 3 months",
   },
