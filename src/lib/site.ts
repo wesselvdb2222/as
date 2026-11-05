@@ -98,6 +98,16 @@ export const partners: Partner[] = [
     featured: true,
     perk: "Get 10% off for 3 months",
   },
+  {
+    name: "Higgsfield",
+    category: "Creative",
+    description: "AI-native creative suite: generate images, videos and voiceovers for your ads from a prompt or a reference.",
+    // AllSourced referral link: unlocks the discount.
+    url: "https://higgsfield.ai?fpr=wessel-d1c4c1",
+    affiliate: true,
+    featured: true,
+    perk: "Get 50% off your first 3 hours",
+  },
 ];
 
 /** Page-view beacon endpoint in the Phase CRM; visits show up under AllSourced → Analytics there. */
