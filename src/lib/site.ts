@@ -54,7 +54,7 @@ export const navLinks: { label: string; href: string }[] = [
 export const headerLinks: { label: string; href: string }[] = [
   { label: "Services", href: "/#services" },
   { label: "Tools", href: TOOLS_URL },
-  { label: "Partner Deals", href: "/partners" },
+  { label: "Deals", href: "/partners" },
 ];
 
 export type Partner = {
