@@ -107,6 +107,25 @@ function Check() {
   );
 }
 
+/** The Meta infinity mark in Meta's own blue gradient (#0064E0 → #0082FB). */
+function MetaLogo() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-label="Meta" role="img">
+      <defs>
+        <linearGradient id="meta-logo-gradient" x1="3" y1="17" x2="21" y2="7" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#0064E0" />
+          <stop offset="60%" stopColor="#0073EE" />
+          <stop offset="100%" stopColor="#0082FB" />
+        </linearGradient>
+      </defs>
+      <path
+        stroke="url(#meta-logo-gradient)"
+        d="M3 12c0-3 1.6-5.5 3.6-5.5 2.6 0 4.6 5.5 6.4 8.5 1.4 2.3 2.4 2.5 3.4 2.5 2 0 3.6-2.2 3.6-5.5S18.4 6.5 16.4 6.5c-2.6 0-4.6 5.5-6.4 8.5-1.4 2.3-2.4 2.5-3.4 2.5C4.6 17.5 3 15 3 12Z"
+      />
+    </svg>
+  );
+}
+
 export function MetaSection() {
   const { currency } = useCurrency();
   const trackRef = useRef<HTMLUListElement>(null);
@@ -143,8 +162,8 @@ export function MetaSection() {
         <div className="flex items-end justify-between gap-6">
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-md border border-brand/30 bg-brand/10 text-brand-light">
-                <ServiceIcon icon="meta" />
+              <span className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-white/5">
+                <MetaLogo />
               </span>
               <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Meta</h2>
             </div>
