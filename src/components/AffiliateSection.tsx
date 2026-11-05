@@ -51,12 +51,12 @@ export function AffiliateSection() {
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-brand/40 bg-gradient-to-br from-brand/30 via-brand/10 to-black p-6 shadow-2xl shadow-brand/10 sm:p-10">
         <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand-light/20 blur-3xl" />
 
-        <div className="relative grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+        <div className="relative">
           <div>
             <span className="inline-flex rounded-md border border-brand/40 bg-brand/15 px-2.5 py-1 text-xs font-semibold text-brand-light">
               Affiliate program
             </span>
-            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight text-white sm:text-4xl">
               Become an affiliate partner and earn up to 30% commission
             </h2>
             <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/65 sm:text-base">
@@ -73,7 +73,7 @@ export function AffiliateSection() {
             </a>
           </div>
 
-          <ol className="space-y-3">
+          <ol className="mt-10 grid gap-3 md:grid-cols-3">
             {STEPS.map((step, index) => (
               <li key={step.title} className="flex gap-4 rounded-xl border border-white/10 bg-black/40 p-4">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-brand/40 bg-brand/15 text-brand-light">
