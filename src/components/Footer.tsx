@@ -145,8 +145,9 @@ export function Footer() {
             <p>
               © <CurrentYear /> AllSourced. All rights reserved.
             </p>
-            <p className="max-w-xl md:text-right">
-              Meta, Facebook and Instagram are trademarks of Meta Platforms, Inc.
+            <p className="max-w-xl rounded-md border border-white/15 bg-black px-3 py-2 text-white/70 md:text-right">
+              We are not affiliated with any social media platform or Meta Platforms, Inc. Meta, Facebook and Instagram
+              are trademarks of Meta Platforms, Inc.
             </p>
           </div>
         </div>
