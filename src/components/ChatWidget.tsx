@@ -34,6 +34,8 @@ function WhatsAppIcon({ className }: { className?: string }) {
  * the chat window says so and hands over to WhatsApp instead of pretending to be live chat. */
 export function ChatWidget() {
   const [open, setOpen] = useState(false);
+  // Unread badge on the bubble until the visitor opens the chat once.
+  const [seen, setSeen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -97,14 +99,25 @@ export function ChatWidget() {
       <button
         ref={toggleRef}
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          setOpen((v) => !v);
+          setSeen(true);
+        }}
         aria-expanded={open}
         aria-controls="chat-window"
         aria-label={open ? "Close chat" : "Talk to our team"}
         title={open ? undefined : "Talk to our team"}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-brand text-white shadow-lg shadow-black/40 transition hover:scale-105 hover:bg-brand-light"
+        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-brand text-white shadow-lg shadow-black/40 transition hover:scale-105 hover:bg-brand-light"
       >
         {open ? <CloseIcon className="h-[22px] w-[22px]" /> : <ChatIcon />}
+        {!seen && (
+          <span
+            aria-hidden
+            className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full border-2 border-black bg-red-500 px-1 text-[11px] font-bold leading-none text-white"
+          >
+            1
+          </span>
+        )}
       </button>
     </div>
   );
