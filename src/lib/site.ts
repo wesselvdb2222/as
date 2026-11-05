@@ -64,6 +64,8 @@ export type Partner = {
   url?: string;
   /** Path to a logo in /public, e.g. "/partners/acme.svg" */
   logo?: string;
+  /** Paid/affiliate link: marked rel="sponsored" as Google asks for such links. */
+  affiliate?: boolean;
   /** Shown large at the top of the page. */
   featured?: boolean;
   /** A benefit for AllSourced clients, e.g. "10% off with code ALLSOURCED". */
@@ -74,7 +76,16 @@ export type Partner = {
 
 // TODO: replace the examples with real partners (remove `placeholder` from each).
 export const partners: Partner[] = [
-  { name: "Partner name", category: "Advertising", description: "Short description of what this partner does and how you work together.", featured: true, perk: "Exclusive benefit for AllSourced clients", placeholder: true },
+  {
+    name: "Shopify",
+    category: "E-commerce",
+    description: "The platform behind most of the stores we work with. Launch your online store and start selling in days.",
+    // AllSourced affiliate link: unlocks the $1/month deal.
+    url: "https://shopify.pxf.io/vPVV0y",
+    affiliate: true,
+    featured: true,
+    perk: "Exclusive deal: get Shopify for $1 per month",
+  },
   { name: "Partner name", category: "Payments", description: "Short description of what this partner does and how you work together.", featured: true, placeholder: true },
   { name: "Partner name", category: "E-commerce", description: "Short description of what this partner does and how you work together.", placeholder: true },
 ];

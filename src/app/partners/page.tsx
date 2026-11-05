@@ -42,10 +42,10 @@ function VisitLink({ partner }: { partner: Partner }) {
     <a
       href={partner.url}
       target="_blank"
-      rel="noopener noreferrer"
+      rel={partner.affiliate ? "sponsored noopener noreferrer" : "noopener noreferrer"}
       className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-light transition-colors hover:text-white"
     >
-      Visit website <span aria-hidden>↗</span>
+      {partner.perk && partner.affiliate ? "Claim the deal" : "Visit website"} <span aria-hidden>↗</span>
     </a>
   );
 }
