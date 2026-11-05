@@ -2,12 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { TOOLS_URL, TRUSTPILOT_URL } from "@/lib/site";
 import { AvailabilityBanner } from "./AvailabilityBanner";
+import { HiddenOn } from "./HiddenOn";
 import { CurrentYear } from "./CurrentYear";
 
 export function Footer() {
   return (
     <>
-      <AvailabilityBanner />
+      {/* /partners ends with its own "Become a partner" line; one WhatsApp prompt is enough there. */}
+      <HiddenOn paths={["/partners"]}>
+        <AvailabilityBanner />
+      </HiddenOn>
 
       <footer id="contact" className="border-t border-white/10 bg-[#0b0716]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
