@@ -94,6 +94,7 @@ export const partners: Partner[] = [
     // AllSourced referral link: unlocks the 10% discount.
     url: "https://www.wetracked.io/?ref=0d54dd79-df6a-4080-9765-06b626f24c83",
     affiliate: true,
+    logo: "/partners/wetracked.png",
     featured: true,
     perk: "Get 10% off for 3 months",
   },
