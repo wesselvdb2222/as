@@ -242,7 +242,7 @@ export function MetaSection() {
 
         {/* Legal disclaimer + "Ask us": centred in the gap between the services and Why us (same
             space above as the next section has on top) */}
-        <p className="mx-auto mt-14 flex max-w-2xl sm:mt-16 items-start justify-center gap-2 text-center text-xs leading-relaxed text-white/45">
+        <p className="mt-14 flex items-start gap-2 text-xs leading-relaxed text-white/45 sm:mt-16">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -262,7 +262,7 @@ export function MetaSection() {
           </span>
         </p>
 
-        <div className="mt-4 text-center">
+        <div className="mt-4">
           <a
             href={WHATSAPP_URL}
             target="_blank"
