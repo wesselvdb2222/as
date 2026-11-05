@@ -105,6 +105,7 @@ export const partners: Partner[] = [
     // AllSourced referral link: unlocks the discount.
     url: "https://higgsfield.ai?fpr=wessel-d1c4c1",
     affiliate: true,
+    logo: "/partners/higgsfield.svg",
     featured: true,
     perk: "Get 50% off your first 3 hours",
   },
