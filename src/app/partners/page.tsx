@@ -7,8 +7,8 @@ const hasPlaceholders = partners.some((p) => p.placeholder);
 
 // Kept out of search engines while example partners are still listed (see `placeholder`).
 export const metadata: Metadata = pageMetadata({
-  title: "Partners",
-  description: "The platforms and companies AllSourced works with to keep your advertising running and your business growing.",
+  title: "Exclusive Partner Deals",
+  description: "Exclusive deals from the platforms AllSourced works with, like Shopify for $1 per month. Tools to run and grow your online business.",
   path: "/partners",
   noindex: hasPlaceholders,
 });
@@ -60,9 +60,9 @@ export default function PartnersPage() {
       <section className="px-5 pb-12 pt-44 sm:px-8 sm:pt-52">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold text-brand-light">Partners</p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-5xl">The partners behind our work</h1>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-5xl">Exclusive Partner Deals</h1>
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
-            We work with trusted platforms and companies to keep your advertising running and your business growing.
+            Deals from the platforms we work with every day, available through AllSourced.
           </p>
         </div>
 

@@ -57,7 +57,7 @@ export function Footer() {
                     href="/partners"
                     className="text-sm text-white/60 transition-colors hover:text-white"
                   >
-                    Partners
+                    Partner Deals
                   </Link>
                 </li>
                 <li>
