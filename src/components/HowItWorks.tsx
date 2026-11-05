@@ -57,7 +57,7 @@ const STEPS = [
   },
 ];
 
-/** "How it works": a label pill above a glowing four-step timeline. */
+/** "How it works": Meta-style heading above a glowing four-step timeline. */
 export function HowItWorks() {
   return (
     <section data-section="how-it-works" className="relative isolate overflow-hidden bg-black px-5 py-20 sm:px-8 sm:py-24">
@@ -65,9 +65,19 @@ export function HowItWorks() {
       <div aria-hidden className="pointer-events-none absolute -right-32 bottom-0 -z-10 h-80 w-80 rounded-full bg-brand/10 blur-3xl" />
 
       <div className="mx-auto max-w-6xl">
-        <p className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white/70">
-          <span className="h-1.5 w-1.5 rounded-full bg-brand-light" />
-          How it works
+        {/* Same heading style as the Meta section */}
+        <div className="flex items-center gap-3">
+          <span className="flex h-9 w-9 items-center justify-center rounded-md border border-brand/30 bg-brand/10 text-brand-light">
+            <svg {...iconProps} className="h-[18px] w-[18px]">
+              <circle cx="6" cy="19" r="2" />
+              <circle cx="18" cy="5" r="2" />
+              <path d="M8 19h7a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h7" />
+            </svg>
+          </span>
+          <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">How it works</h2>
+        </div>
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/60 sm:text-base">
+          From your first message to live ads within 24 hours.
         </p>
 
         {/* Timeline */}
