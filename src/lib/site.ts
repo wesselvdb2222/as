@@ -84,6 +84,7 @@ export const partners: Partner[] = [
     // AllSourced affiliate link: unlocks the $1/month deal.
     url: "https://shopify.pxf.io/vPVV0y",
     affiliate: true,
+    logo: "/partners/shopify.svg",
     featured: true,
     perk: "Exclusive deal: get Shopify for $1 per month",
   },
