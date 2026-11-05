@@ -14,7 +14,7 @@ const iconProps = {
 const STEPS = [
   {
     title: "Join",
-    text: "Message us on WhatsApp and get your personal referral link.",
+    text: "Message us on WhatsApp to become an affiliate partner.",
     icon: (
       <svg {...iconProps}>
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
@@ -24,8 +24,8 @@ const STEPS = [
     ),
   },
   {
-    title: "Share",
-    text: "Recommend AllSourced to advertisers, agencies and your audience.",
+    title: "Introduce",
+    text: "Have a client for us? We start a WhatsApp group with you, the client and our team.",
     icon: (
       <svg {...iconProps}>
         <path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" />
@@ -47,7 +47,7 @@ const STEPS = [
 /** Affiliate programme call-out: three steps and a WhatsApp CTA. */
 export function AffiliateSection() {
   return (
-    <section data-section="affiliate" className="bg-black px-5 py-16 sm:px-8 sm:py-20">
+    <section data-section="affiliate" className="bg-[#0b0716] px-5 py-14 sm:px-8 sm:py-16">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-brand/40 bg-gradient-to-br from-brand/30 via-brand/10 to-black p-6 shadow-2xl shadow-brand/10 sm:p-10">
         <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand-light/20 blur-3xl" />
 
@@ -60,8 +60,8 @@ export function AffiliateSection() {
               Become an affiliate partner and earn up to 30% commission
             </h2>
             <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/65 sm:text-base">
-              Know advertisers who need stable ad accounts? Refer them to AllSourced and earn a commission on every client
-              you bring in.
+              Know advertisers who need stable ad accounts? Introduce them to us in a WhatsApp group and earn a commission
+              on every client you bring in.
             </p>
             <a
               href={WHATSAPP_URL}
