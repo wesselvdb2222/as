@@ -34,9 +34,9 @@ function DealCard({ partner }: { partner: Partner }) {
           target="_blank"
           // Paid/affiliate links are marked sponsored, as Google asks.
           rel={partner.affiliate ? "sponsored noopener noreferrer" : "noopener noreferrer"}
-          className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-md bg-white px-5 py-3 text-sm font-semibold text-black transition-colors hover:bg-white/90"
+          className="inline-flex shrink-0 items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-black transition-colors hover:bg-white/90"
         >
-          {partner.perk && partner.affiliate ? "Claim the deal" : "Visit website"} <span aria-hidden>↗</span>
+          {partner.perk && partner.affiliate ? "Claim the deal" : "Visit website"}
         </a>
       )}
     </li>
