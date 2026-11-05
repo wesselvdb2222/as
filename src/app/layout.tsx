@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ChatWidget } from "@/components/ChatWidget";
 import { CurrencyProvider } from "@/components/CurrencyProvider";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
@@ -92,6 +93,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           <Navbar banner={banner} />
           {children}
           <Footer />
+          <ChatWidget />
           <Suspense>
             <VisitTracker />
           </Suspense>
