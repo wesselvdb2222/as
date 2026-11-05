@@ -40,3 +40,29 @@ export function TrustpilotRating() {
     </a>
   );
 }
+
+/** Compact Trustpilot badge for the footer, sized to sit next to the Meta Business Partner badge. */
+export function TrustpilotBadge() {
+  const { score, label, reviews } = TRUSTPILOT_SCORE;
+  return (
+    <a
+      href={TRUSTPILOT_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${label}: rated ${score} out of 5 from ${reviews} reviews on Trustpilot`}
+      className="flex h-16 flex-col justify-center rounded-lg border border-white/15 bg-white/[0.04] px-4 transition-colors hover:border-white/30"
+    >
+      <span className="flex items-center gap-2">
+        <span className="text-sm font-semibold text-white">{label}</span>
+        <TrustpilotStars size="sm" />
+      </span>
+      <span className="mt-1 flex items-center gap-1 text-xs text-white/60">
+        {score} · {reviews} reviews on
+        <svg viewBox="0 0 24 24" fill={TRUSTPILOT_GREEN} className="h-3.5 w-3.5" aria-hidden>
+          <path d={STAR_PATH} />
+        </svg>
+        <span className="font-semibold text-white">Trustpilot</span>
+      </span>
+    </a>
+  );
+}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TOOLS_URL, TRUSTPILOT_URL } from "@/lib/site";
+import { TrustpilotBadge } from "./TrustpilotRating";
 import { AvailabilityBanner } from "./AvailabilityBanner";
 import { HiddenOn } from "./HiddenOn";
 import { CurrentYear } from "./CurrentYear";
@@ -44,13 +45,16 @@ export function Footer() {
               </p>
               {/* AllSourced is a Meta Business Partner. TODO: link the badge to our listing in Meta's
                   partner directory (facebook.com/business/marketing-partners) once we have the URL. */}
-              <Image
-                src="/partners/badge-dark.png"
-                alt="Meta Business Partner"
-                width={774}
-                height={444}
-                className="mt-6 h-16 w-auto"
-              />
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <Image
+                  src="/partners/badge-dark.png"
+                  alt="Meta Business Partner"
+                  width={774}
+                  height={444}
+                  className="h-16 w-auto"
+                />
+                <TrustpilotBadge />
+              </div>
             </div>
 
             {/* Company */}
