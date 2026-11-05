@@ -57,9 +57,9 @@ export function Hero() {
         </div>
 
         <h1 className="mt-7 text-3xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          Restricted assets?
+          Agency ad accounts
           <br />
-          <span className="text-white/50">We keep your business running.</span>
+          <span className="text-white/50">that keep your Meta ads running.</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">

@@ -4,7 +4,7 @@ const TRUSTPILOT_GREEN = "#00B67A";
 const STAR_PATH = "M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6L12 2.5Z";
 
 /** Five white stars on Trustpilot-green squares. */
-function TrustpilotStars({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
+export function TrustpilotStars({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
   const box = { sm: "h-4 w-4", md: "h-6 w-6", lg: "h-8 w-8" }[size];
   const star = { sm: "h-3 w-3", md: "h-4 w-4", lg: "h-6 w-6" }[size];
   return (
