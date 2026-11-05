@@ -3,7 +3,6 @@ import Link from "next/link";
 import { TOOLS_URL, TRUSTPILOT_URL } from "@/lib/site";
 import { AvailabilityBanner } from "./AvailabilityBanner";
 import { HiddenOn } from "./HiddenOn";
-import { StatsCounter } from "./StatsCounter";
 import { CurrentYear } from "./CurrentYear";
 
 export function Footer() {
@@ -11,7 +10,6 @@ export function Footer() {
     <>
       {/* /partners ends with its own "Become a partner" line; one WhatsApp prompt is enough there. */}
       <HiddenOn paths={["/partners"]}>
-        <StatsCounter />
         <AvailabilityBanner />
       </HiddenOn>
 

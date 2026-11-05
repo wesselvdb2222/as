@@ -55,7 +55,7 @@ export function Hero() {
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/70 sm:text-sm">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          Trusted by 1,200+ digital businesses
+          Trusted by 850+ digital businesses
         </div>
 
         <h1 className="mt-7 text-3xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">

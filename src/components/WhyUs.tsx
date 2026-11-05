@@ -34,7 +34,7 @@ const reasons = [
   {
     title: "Expertise",
     description:
-      "Trusted by 1,200+ digital businesses. We know what it takes to keep your ads running.",
+      "Trusted by 850+ digital businesses. We know what it takes to keep your ads running.",
     icon: (
       <svg {...iconProps}>
         <path d="M12 3 2 8l10 5 10-5-10-5Z" />
