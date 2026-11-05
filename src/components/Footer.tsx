@@ -141,11 +141,11 @@ export function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-white/40 md:flex-row md:items-center md:justify-between">
+          <div className="mt-16 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-center text-xs text-white/40">
             <p>
               © <CurrentYear /> AllSourced. All rights reserved.
             </p>
-            <p className="max-w-xl rounded-md border border-white/15 bg-black px-3 py-2 text-white/70 md:text-right">
+            <p className="max-w-xl rounded-md border border-white/15 bg-black px-3 py-2 text-white/70">
               We are not affiliated with any social media platform or Meta Platforms, Inc. Meta, Facebook and Instagram
               are trademarks of Meta Platforms, Inc.
             </p>
