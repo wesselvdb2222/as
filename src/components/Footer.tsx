@@ -42,6 +42,16 @@ export function Footer() {
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
                 We handle your backend, so you can focus on optimizing your marketing.
               </p>
+              <a
+                href="mailto:support@allsourced-agency.com"
+                className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-white/80 transition-colors hover:text-white"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-brand-light" aria-hidden>
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3 7 9 6 9-6" />
+                </svg>
+                support@allsourced-agency.com
+              </a>
               {/* AllSourced is a Meta Business Partner. TODO: link the badge to our listing in Meta's
                   partner directory (facebook.com/business/marketing-partners) once we have the URL. */}
               <div className="mt-6 flex flex-wrap items-center gap-3">
