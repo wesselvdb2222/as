@@ -112,4 +112,4 @@ export const partners: Partner[] = [
 ];
 
 /** Page-view beacon endpoint in the Phase CRM; visits show up under AllSourced → Analytics there. */
-export const TRACKING_URL = "https://www.phase-hq.com/api/track";
+export const TRACKING_URL = "https://manage.allsourced-agency.com/api/track";

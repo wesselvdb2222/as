@@ -2,7 +2,7 @@ import { cacheLife } from "next/cache";
 import type { SiteBannerData } from "@/lib/banner-format";
 
 // In development, read from the locally running CRM so banner edits can be tried before deploying.
-const CRM_ORIGIN = process.env.NODE_ENV === "production" ? "https://www.phase-hq.com" : "http://localhost:3000";
+const CRM_ORIGIN = process.env.NODE_ENV === "production" ? "https://manage.allsourced-agency.com" : "http://localhost:3000";
 const BANNER_URL = `${CRM_ORIGIN}/api/public/site-banner?brand=allsourced`;
 
 /** The announcement bar's content, managed in the Phase CRM (AllSourced → Website banner).
